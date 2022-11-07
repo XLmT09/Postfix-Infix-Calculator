@@ -46,18 +46,18 @@
 		</resources>
 		<plugins>
 			<plugin>
-    		<groupId>org.openjfx</groupId>
-    		<artifactId>javafx-maven-plugin</artifactId>
-    		<version>0.0.4</version>
-    		<configuration>
-					<mainClass>Entry</mainClass>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-maven-plugin</artifactId>
+				<version>0.0.4</version>
+				<configuration>
+					<mainClass>calculator.Driver</mainClass>
 				</configuration>
 				<executions>
 					<execution>
 						<id>debug</id>
 						<configuration>
 							<options>
-								<option>agentlib:jdwpt=transport=dt_socket,server=y,suspend=y,address=*:8001</option>
+								<option>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:8001</option>
 							</options>
 						</configuration>
 					</execution>
@@ -70,6 +70,11 @@
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>calculator.Driver</mainClass>
+						</manifest>
+					</archive>
 				</configuration>
 				<executions>
 					<execution>
