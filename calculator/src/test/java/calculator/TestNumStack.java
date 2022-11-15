@@ -27,8 +27,12 @@ class TestNumStack {
   }
   
   @Test
-  void testNumStackTop() {
-    assertEquals(numStack.top(), 1);
+  void testNumStackPop() {
+    numStack.push((float) 3.0);
+    assertEquals(numStack.pop(), 3.0,
+        "Pushed a float of value 3.0, so when popped i should get 3.0");
+    assertEquals(numStack.isEmpty(), true, 
+        "After stack has been popped it should be empty.");
   }
   
 

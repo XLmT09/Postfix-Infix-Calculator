@@ -6,21 +6,40 @@ package calculator;
  * @author HIJI
  */
 public class NumStack {
-  Stack stack;
+  private Stack stack;
   
+  /**
+   * Constructs a new @code NumStack object and
+   * initialises an empty @code Stack. 
+   */
   public NumStack() {
     stack = new Stack();
   }
   
+  /**
+   * Adds new @see Entry to @see Stack.
+   *
+   * @param value The newest @code Entry to be added
+   */
   public void push(float value) {
     Entry newEntry = new Entry((int) value);
     stack.push(newEntry);
   }
   
-  public int top() {
-    return 1;
+  /**
+   * Retrieves the latest Entry in the stack and returns its corresponding
+   * float value.
+   *
+   * @return poppedValue The newest entries float value
+   */
+  public float pop() {
+    float poppedValue = stack.pop().getValue();
+    return poppedValue;
   }
   
+  /**
+   * Returns true is @code NumStack has no @code Entry objects and false otherwise.
+   */
   public boolean isEmpty() {
     return stack.size() == 0;
   }
