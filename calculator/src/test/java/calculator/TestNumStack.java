@@ -15,7 +15,7 @@ class TestNumStack {
   
   @Test
   void testNumStackPush() {
-    assertEquals(numStack.top(), 1);
+    assertEquals(numStack.push((float) 5.0), 1);
   }
   
   @Test
@@ -25,7 +25,8 @@ class TestNumStack {
   
   @Test
   void testNumStackIsEmpty() {
-    assertEquals(numStack.isEmpty(), true);
+    assertEquals(numStack.isEmpty(), true, 
+        "Nothing is added to stack when created so returns true.");
   }
   
 

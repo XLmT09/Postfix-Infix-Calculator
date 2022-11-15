@@ -6,8 +6,11 @@ package calculator;
  * @author HIJI
  */
 public class NumStack {
+  Stack stack;
   
-  public NumStack() {}
+  public NumStack() {
+    stack = new Stack();
+  }
   
   public int push(float value) {
     return 1;
@@ -18,6 +21,6 @@ public class NumStack {
   }
   
   public boolean isEmpty() {
-    return true;
+    return stack.size() == 0;
   }
 }
