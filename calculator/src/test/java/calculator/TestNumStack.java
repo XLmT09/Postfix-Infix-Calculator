@@ -1,7 +1,9 @@
 package calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.EmptyStackException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -33,6 +35,12 @@ class TestNumStack {
         "Pushed a float of value 3.0, so when popped i should get 3.0");
     assertEquals(numStack.isEmpty(), true, 
         "After stack has been popped it should be empty.");
+  }
+  
+  @Test
+  void testNumStackPopException() {
+    assertThrows(EmptyStackException.class, () -> numStack.pop(), 
+        "Cannot pop from an empty stack.");
   }
   
 
