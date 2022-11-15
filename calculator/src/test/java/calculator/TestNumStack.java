@@ -14,19 +14,21 @@ class TestNumStack {
   }
   
   @Test
+  void testNumStackIsEmpty() {
+    assertEquals(numStack.isEmpty(), true, 
+        "Nothing is added to stack when created so returns true.");
+  }
+  
+  @Test
   void testNumStackPush() {
-    assertEquals(numStack.push((float) 5.0), 1);
+    numStack.push((float) 5.0);
+    assertEquals(numStack.isEmpty(), false,
+        "Adding Entry to stack wont make it empty.");
   }
   
   @Test
   void testNumStackTop() {
     assertEquals(numStack.top(), 1);
-  }
-  
-  @Test
-  void testNumStackIsEmpty() {
-    assertEquals(numStack.isEmpty(), true, 
-        "Nothing is added to stack when created so returns true.");
   }
   
 

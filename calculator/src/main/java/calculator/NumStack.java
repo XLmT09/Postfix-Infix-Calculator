@@ -12,8 +12,9 @@ public class NumStack {
     stack = new Stack();
   }
   
-  public int push(float value) {
-    return 1;
+  public void push(float value) {
+    Entry newEntry = new Entry((int) value);
+    stack.push(newEntry);
   }
   
   public int top() {
