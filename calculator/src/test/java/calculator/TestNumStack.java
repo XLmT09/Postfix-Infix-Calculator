@@ -43,5 +43,21 @@ class TestNumStack {
         "Cannot pop from an empty stack.");
   }
   
+  @Test
+  void testNumStackPushAndPopTwice() {
+    numStack.push((float) 3.0);
+    numStack.push((float) 4.0);
+    assertEquals(numStack.isEmpty(), false,
+        "Adding Entry to stack wont make it empty.");
+    assertEquals(numStack.pop(), 4.0,
+        "Pushed a float of value 4.0 last, so when popped i should get 4.0");
+    assertEquals(numStack.isEmpty(), false,
+        "Still one Entry in stack so not empty.");
+    assertEquals(numStack.pop(), 3.0,
+        "Last Entry is 3.0, so when popped i should get 3.0");
+    assertEquals(numStack.isEmpty(), true, 
+        "After stack has been popped it should be empty.");
+  }
+  
 
 }
