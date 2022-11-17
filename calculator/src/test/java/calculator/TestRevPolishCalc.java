@@ -3,8 +3,11 @@ package calculator;
 import org.junit.jupiter.api.BeforeEach;
 
 class TestRevPolishCalc {
-
+  private RevPolishCalc calc;
+  
   @BeforeEach
-  void setUp() throws Exception {}
+  void setUp() {
+    calc = new RevPolishCalc();
+  }
 
 }
