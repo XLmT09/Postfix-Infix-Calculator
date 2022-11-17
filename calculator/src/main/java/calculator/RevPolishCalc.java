@@ -21,11 +21,24 @@ public class RevPolishCalc implements Calculator {
    */
   @Override
   public float evaluate(String expression) {
+    //Split and store components of expression in an array
     String[] expressionParts = expression.split(" ");
+    //This regular expression checks if a string is an integer or decimal
+    String regex = "[0-9]+[\\.]?[0-9]*";
+    //stores result of the expression
+    float result = 0;
     
-    float val1 = Float.parseFloat(expressionParts[0]);
-    float val2 = Float.parseFloat(expressionParts[1]);
+    for (String part : expressionParts) {
+      if (part.matches(regex)) {
+        stackValues.push(Float.parseFloat(part));
+        System.out.println(Float.parseFloat(part));
+      }
+    }
+        
+    while (!stackValues.isEmpty()) {
+      result += stackValues.pop();
+    }
 
-    return val1 + val2;
+    return (float) (Math.round(result * 100.0) / 100.0);
   }
 }
