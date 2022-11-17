@@ -21,6 +21,11 @@ public class RevPolishCalc implements Calculator {
    */
   @Override
   public float evaluate(String expression) {
-    return (float) 2.0;
+    String[] expressionParts = expression.split(" ");
+    
+    float val1 = Float.parseFloat(expressionParts[0]);
+    float val2 = Float.parseFloat(expressionParts[1]);
+
+    return val1 + val2;
   }
 }

@@ -14,8 +14,13 @@ class TestRevPolishCalc {
   }
   
   @Test
-  void testBasicEvaluation() {
-    assertEquals(calc.evaluate("1 + 1"), 2.0);
+  void testBasicAddition() {
+    assertEquals(calc.evaluate("1 1 +"), 2.0);
+  }
+  
+  @Test
+  void testBasicSecondAddition() {
+    assertEquals(calc.evaluate("1 2 +"), 3.0);
   }
 
 }
