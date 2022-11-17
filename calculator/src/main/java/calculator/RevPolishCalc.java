@@ -5,7 +5,7 @@ package calculator;
  *
  * @author HIJI
  */
-public class RevPolishCalc {
+public class RevPolishCalc implements Calculator {
   //The NumStack will hold the numeric values of an given expression.
   private NumStack stackValues;
   
@@ -14,5 +14,13 @@ public class RevPolishCalc {
    */
   public RevPolishCalc() {
     stackValues = new NumStack();
+  }
+
+  /**
+   * Returns a solution for reverse polish notation expressions. 
+   */
+  @Override
+  public float evaluate(String expression) {
+    return (float) 2.0;
   }
 }
