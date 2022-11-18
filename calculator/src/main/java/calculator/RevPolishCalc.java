@@ -18,6 +18,7 @@ public class RevPolishCalc implements Calculator {
     stackValues = new NumStack();
   }
 
+  // This method calculates and returns the operations on two numbers
   private float doOperation(String operation, float val1, float val2) {
     switch (operation) {
       case "+":
@@ -28,13 +29,20 @@ public class RevPolishCalc implements Calculator {
         return val2 * val1;
       case "/":
         return val2 / val1;
+      // If operators above are not recognised then its invalid
       default:
-        return 1.0f;
+        throw new InvalidExpressionException("Expression contains an invalid" + "operator");
     }
   }
 
   /**
    * Returns a solution for reverse polish notation expressions.
+   *
+   * @param expression The {@code String} to be evaluated
+   * @return The solution for the expression
+   * @throws InvalidExpressionException If there are not enough numbers in
+   *         {@link calculator.NumStack NumStack} during calculation, or if expression contains an
+   *         invalid operator. This means operator must be: +, -, * or /.
    */
   @Override
   public float evaluate(String expression) {
@@ -42,25 +50,27 @@ public class RevPolishCalc implements Calculator {
     String[] expressionParts = expression.split(" ");
     // This regular expression checks if a string is an integer or decimal
     String regex = "[-]*[0-9]+[\\.]?[0-9]*";
-    // stores result of the expression
-    float result = 0;
 
+    // loop through elements of an expression
     for (String part : expressionParts) {
+      // check if string element is a number
       if (part.matches(regex)) {
         stackValues.push(Float.parseFloat(part));
       } else {
         try {
+          // If operator is detected then should always pop the first two numbers
           float num1 = stackValues.pop();
           float num2 = stackValues.pop();
           stackValues.push(doOperation(part, num1, num2));
+          // EmptyStackException is called if there isn't enough numbers in stack to
+          // perform the operation
         } catch (EmptyStackException e) {
-          throw new InvalidExpressionException("Not a valid expression for"
-              + "reverse polish");
+          throw new InvalidExpressionException("Not a valid expression for" + "reverse polish");
         }
       }
     }
 
-    result = stackValues.pop();
-    return result;
+    // last value in the stack contains the result
+    return stackValues.pop();
   }
 }

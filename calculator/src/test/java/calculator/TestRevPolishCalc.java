@@ -2,6 +2,7 @@ package calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import java.util.Random;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -137,7 +138,7 @@ class TestRevPolishCalc {
     int intRandom = 0;
     //The highest number intRandom can hold
     int randLimit = 10;
-    //Lowest number intRandom can hold, to prevent zero multiplication
+    //Lowest number intRandom can hold, to prevent zero division
     int minLimit = 1;
     
     //set up beginning expression
@@ -167,12 +168,28 @@ class TestRevPolishCalc {
     assertEquals(-10.0f, calc.evaluate("-20 10 +"));
   }
   
+  @Test
+  void testTwoDifferentOperations() {
+    assertEquals(-14.0f, calc.evaluate("-5 1 + 10 -"));
+  }
+  
+  @Test
+  void testTwoOperationsInRow() {
+    assertEquals(-16.0f, calc.evaluate("-5 1 10 + -"));
+  }
+  
   @Test 
   void testInvalidExpressionNotEnoughNumbers() {
     assertThrows(InvalidExpressionException.class, () -> calc.evaluate("+ 10 10"), 
         "Need at least two numbers in stack then include an operation");
     assertThrows(InvalidExpressionException.class, () -> calc.evaluate("10 + 10"), 
         "Need at least two numbers in stack then include an operation");
+  }
+  
+  @Test 
+  void testInvalidOperator() {
+    assertThrows(InvalidExpressionException.class, () -> calc.evaluate("10 10 @"), 
+        "Operators can only be *, +, -, /");
   }
   
 }

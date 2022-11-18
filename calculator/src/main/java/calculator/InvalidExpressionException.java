@@ -1,7 +1,8 @@
 package calculator;
 
 /**
- * This exception is thrown when an expression has a invalid symbol. 
+ * This exception is thrown when an expression is in a invalid format, or contains
+ * invalid operators or symbols.
  *
  * @author HIJI
  */
