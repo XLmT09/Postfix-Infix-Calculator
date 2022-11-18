@@ -48,7 +48,7 @@ public class RevPolishCalc implements Calculator {
       }
     }
     
-    result = (float) (Math.round(stackValues.pop() * 100.0) / 100.0);
+    result = stackValues.pop();
     return result;
   }
 }

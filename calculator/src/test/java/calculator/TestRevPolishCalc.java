@@ -24,8 +24,8 @@ class TestRevPolishCalc {
   
   @Test
   void testBasicAddition() {
-    assertEquals(calc.evaluate("1 1 +"), 2.0f);
-    assertEquals(calc.evaluate("1 2 +"), 3.0f);
+    assertEquals(2.0f, calc.evaluate("1 1 +"));
+    assertEquals(3.0f, calc.evaluate("1 2 +"));
   }
   
   @Test
@@ -50,14 +50,14 @@ class TestRevPolishCalc {
       testExpression += intRandom + " + ";
     }
  
-    assertEquals(calc.evaluate(testExpression), sum,
+    assertEquals(sum, calc.evaluate(testExpression),
         "Evaluate should return the same value as sum,"
         + " because sum had kept track of the additions.");
   }
   
   @Test
   void testBasicSubtraction() {
-    assertEquals(calc.evaluate("1 2 -"), -1.0f, 
+    assertEquals(-1.0f, calc.evaluate("1 2 -"), 
         "It should pop the first value and be subtracted by the second popped value.");
   }
   
@@ -84,14 +84,14 @@ class TestRevPolishCalc {
       testExpression += intRandom + " - ";
     }
  
-    assertEquals(calc.evaluate(testExpression), sum,
+    assertEquals(sum, calc.evaluate(testExpression),
         "Evaluate should return the same value as sum,"
         + " because sum had kept track of the subtractions.");
   }  
 
   @Test
   void testBasicMultiplication() {
-    assertEquals(calc.evaluate("6 2 *"), 12.0f, 
+    assertEquals(12.0f, calc.evaluate("6 2 *"), 
         "It should pop the first value and be multiplied by the second popped value.");
   }
   
@@ -120,14 +120,44 @@ class TestRevPolishCalc {
       testExpression += intRandom + " * ";
     }
  
-    assertEquals(calc.evaluate(testExpression), sum,
+    assertEquals(sum, calc.evaluate(testExpression),
         "Evaluate should return the same value as sum,"
         + " because sum had kept track of the multplication.");
   }  
   
   @Test
   void testBasicDivision() {
-    assertEquals(calc.evaluate("6 3 /"), 2.0f, 
+    assertEquals(2.0f, calc.evaluate("6 3 /"), 
         "It should pop the first value and be divided by the second popped value.");
   }
+  
+  @Test
+  void testTwentyRandomNumbersDivsion() {
+    //Will hold the randomly generated number in every loop
+    int intRandom = 0;
+    //The highest number intRandom can hold
+    int randLimit = 10;
+    //Lowest number intRandom can hold, to prevent zero multiplication
+    int minLimit = 1;
+    
+    //set up beginning expression
+    intRandom = rand.nextInt(randLimit + 1 - minLimit) + minLimit;
+    //Only first number will be added to sum
+    sum += intRandom;
+    testExpression += intRandom;
+    intRandom = rand.nextInt(randLimit + 1 - minLimit) + minLimit;
+    sum /= intRandom;
+    testExpression += " " + intRandom + " / ";
+    
+    //multiplies random number to sum and updates string expression every loop
+    for (int i = 0; i <= 20; i++) {
+      intRandom = rand.nextInt(randLimit + 1 - minLimit) + minLimit;
+      sum /= intRandom;
+      testExpression += intRandom + " / ";
+    }
+ 
+    assertEquals(sum, calc.evaluate(testExpression),
+        "Evaluate should return the same value as sum,"
+        + " because sum had kept track of the Division.");
+  }  
 }
