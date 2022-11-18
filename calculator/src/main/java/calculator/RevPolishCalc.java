@@ -16,6 +16,14 @@ public class RevPolishCalc implements Calculator {
     stackValues = new NumStack();
   }
 
+  private float doOperation(String operation, float val1, float val2) {
+    switch (operation) {
+      case "+": return val1 + val2;
+      case "-": return val2 - val1;
+      default: return -1.0f;
+    }
+  }
+  
   /**
    * Returns a solution for reverse polish notation expressions. 
    */
@@ -31,14 +39,13 @@ public class RevPolishCalc implements Calculator {
     for (String part : expressionParts) {
       if (part.matches(regex)) {
         stackValues.push(Float.parseFloat(part));
-        System.out.println(Float.parseFloat(part));
+      } else {
+        float num1 = stackValues.pop();
+        float num2 = stackValues.pop();
+        stackValues.push(doOperation(part, num1, num2));
       }
     }
-        
-    while (!stackValues.isEmpty()) {
-      result += stackValues.pop();
-    }
-
-    return (float) (Math.round(result * 100.0) / 100.0);
+    
+    return (float) (Math.round(stackValues.pop() * 100.0) / 100.0);
   }
 }

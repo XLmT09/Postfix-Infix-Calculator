@@ -4,7 +4,6 @@ package calculator;
  * This exception is thrown when entry type is invalid.
  *
  * @author HIJI
- *
  */
 @SuppressWarnings("serial")
 public class BadTypeException extends RuntimeException {

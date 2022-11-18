@@ -36,19 +36,30 @@ class TestRevPolishCalc {
     //The highest number intRandom can hold
     int randLimit = 1000;
     
+    //set up beginning expression
+    intRandom = rand.nextInt(randLimit);
+    sum += intRandom;
+    testExpression += intRandom;
+    intRandom = rand.nextInt(randLimit);
+    sum += intRandom;
+    testExpression += " " + intRandom + " + ";
+    
     //Adds random number to sum and updates string expression every loop
     for (int i = 0; i < 10000; i++) {
       intRandom = rand.nextInt(randLimit);
       sum += intRandom;
       testExpression += intRandom + " + ";
     }
-    
-    testExpression += intRandom;
-    sum += intRandom;
  
     assertEquals(calc.evaluate(testExpression), sum,
         "Evaluate should return the same value as sum,"
         + " because sum had kept track of the additions");
+  }
+  
+  @Test
+  void testBasicSubtraction() {
+    System.out.println(calc.evaluate("1 2 -"));
+    assertEquals(calc.evaluate("1 2 -"), -1.0f);
   }
 
 }
