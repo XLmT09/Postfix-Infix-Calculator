@@ -24,7 +24,7 @@ public class NumStack {
    * @param num The value to be converted to an {@link calculator.Entry Entry} object.
    */
   public void push(float num) {
-    Entry newEntry = new Entry((int) num);
+    Entry newEntry = new Entry(num);
     stack.push(newEntry);
   }
   
