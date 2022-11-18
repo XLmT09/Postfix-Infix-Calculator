@@ -124,4 +124,10 @@ class TestRevPolishCalc {
         "Evaluate should return the same value as sum,"
         + " because sum had kept track of the multplication.");
   }  
+  
+  @Test
+  void testBasicDivision() {
+    assertEquals(calc.evaluate("6 3 /"), 2.0f, 
+        "It should pop the first value and be divided by the second popped value.");
+  }
 }
