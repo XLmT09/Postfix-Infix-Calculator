@@ -20,10 +20,6 @@ class TestRevPolishCalc {
   @Test
   void testBasicAddition() {
     assertEquals(calc.evaluate("1 1 +"), 2.0f);
-  }
-  
-  @Test
-  void testBasicSecondAddition() {
     assertEquals(calc.evaluate("1 2 +"), 3.0f);
   }
   
@@ -53,13 +49,46 @@ class TestRevPolishCalc {
  
     assertEquals(calc.evaluate(testExpression), sum,
         "Evaluate should return the same value as sum,"
-        + " because sum had kept track of the additions");
+        + " because sum had kept track of the additions.");
   }
   
   @Test
   void testBasicSubtraction() {
     System.out.println(calc.evaluate("1 2 -"));
-    assertEquals(calc.evaluate("1 2 -"), -1.0f);
+    assertEquals(calc.evaluate("1 2 -"), -1.0f, 
+        "It should pop the first value and be subtracted by the second popped value.");
   }
+  
+  @Test
+  void testTenThousandRandomNumbersSubtraction() {
+    float sum = 0;
+    //Will hold the randomly generated number in every loop
+    int intRandom = 0;
+    String testExpression = "";
+    //The highest number intRandom can hold
+    int randLimit = 1000;
+    
+    //set up beginning expression
+    intRandom = rand.nextInt(randLimit);
+    //Only first number will be added to sum
+    sum += intRandom;
+    testExpression += intRandom;
+    intRandom = rand.nextInt(randLimit);
+    sum -= intRandom;
+    testExpression += " " + intRandom + " - ";
+    
+    //Adds random number to sum and updates string expression every loop
+    for (int i = 0; i < 10000; i++) {
+      intRandom = rand.nextInt(randLimit);
+      sum -= intRandom;
+      testExpression += intRandom + " - ";
+    }
+ 
+    System.out.println(calc.evaluate(testExpression));
+    System.out.println(sum);
+    assertEquals(calc.evaluate(testExpression), sum,
+        "Evaluate should return the same value as sum,"
+        + " because sum had kept track of the subtractions.");
+  }  
 
 }
