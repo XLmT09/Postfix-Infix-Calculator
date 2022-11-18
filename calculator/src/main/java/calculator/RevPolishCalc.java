@@ -34,7 +34,7 @@ public class RevPolishCalc implements Calculator {
     //Split and store components of expression in an array
     String[] expressionParts = expression.split(" ");
     //This regular expression checks if a string is an integer or decimal
-    String regex = "[0-9]+[\\.]?[0-9]*";
+    String regex = "[-]*[0-9]+[\\.]?[0-9]*";
     //stores result of the expression
     float result = 0;
     

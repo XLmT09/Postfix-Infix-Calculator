@@ -149,7 +149,7 @@ class TestRevPolishCalc {
     sum /= intRandom;
     testExpression += " " + intRandom + " / ";
     
-    //multiplies random number to sum and updates string expression every loop
+    //Divides random number to sum and updates string expression every loop
     for (int i = 0; i <= 20; i++) {
       intRandom = rand.nextInt(randLimit + 1 - minLimit) + minLimit;
       sum /= intRandom;
@@ -160,4 +160,11 @@ class TestRevPolishCalc {
         "Evaluate should return the same value as sum,"
         + " because sum had kept track of the Division.");
   }  
+  
+  @Test
+  void testNegativeOperation() {
+    assertEquals(-5.0f, calc.evaluate("-5 1 /"));
+    assertEquals(-10.0f, calc.evaluate("-20 10 +"));
+  }
+  
 }
