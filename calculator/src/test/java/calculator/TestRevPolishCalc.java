@@ -1,7 +1,7 @@
 package calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.Random;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -162,9 +162,17 @@ class TestRevPolishCalc {
   }  
   
   @Test
-  void testNegativeOperation() {
+  void testOperationOnNegativeNumbers() {
     assertEquals(-5.0f, calc.evaluate("-5 1 /"));
     assertEquals(-10.0f, calc.evaluate("-20 10 +"));
+  }
+  
+  @Test 
+  void testInvalidExpressionNotEnoughNumbers() {
+    assertThrows(InvalidExpressionException.class, () -> calc.evaluate("+ 10 10"), 
+        "Need at least two numbers in stack then include an operation");
+    assertThrows(InvalidExpressionException.class, () -> calc.evaluate("10 + 10"), 
+        "Need at least two numbers in stack then include an operation");
   }
   
 }
