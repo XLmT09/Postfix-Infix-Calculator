@@ -31,7 +31,7 @@
             <Font name="Calibri Bold" size="16.0" />
          </font>
       </Label>
-      <TextField maxWidth="200.0" prefHeight="26.0" prefWidth="270.0" style="-fx-border-color: black; -fx-background-color: #CCFFFF;" GridPane.columnSpan="2">
+      <TextField fx:id="input" maxWidth="200.0" prefHeight="26.0" prefWidth="270.0" style="-fx-border-color: black; -fx-background-color: #CCFFFF;" GridPane.columnSpan="2">
          <GridPane.margin>
             <Insets left="100.0" />
          </GridPane.margin>
@@ -47,7 +47,7 @@
             <Font name="Calibri Bold" size="16.0" />
          </font>
       </Text>
-      <Text id="container" fill="#000203" strokeType="OUTSIDE" strokeWidth="0.0" text="NULL" wrappingWidth="199.717529296875" GridPane.rowIndex="1">
+      <Text id="container" fx:id="answer" fill="#000203" strokeType="OUTSIDE" strokeWidth="0.0" text="NULL" wrappingWidth="199.717529296875" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets left="100.0" />
          </GridPane.margin>
@@ -57,7 +57,7 @@
       </Text>
       <HBox prefHeight="48.0" prefWidth="341.0" spacing="10.0" style="-fx-background-color: #00CCCC;" GridPane.columnSpan="2" GridPane.rowIndex="2">
          <children>
-            <Button mnemonicParsing="false" style="-fx-background-color: #CCFFFF; -fx-cursor: hand; -fx-border-color: black;" text="Calculate">
+            <Button fx:id="submit" mnemonicParsing="false" style="-fx-background-color: #CCFFFF; -fx-cursor: hand; -fx-border-color: black;" text="Calculate">
                <font>
                   <Font name="Calibri Bold" size="16.0" />
                </font>

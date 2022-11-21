@@ -18,9 +18,9 @@ public interface ViewInterface {
   /**
    * A hook to show the user the evaluated answer.
    *
-   * @param answer The answer of the given expression 
+   * @param result The answer of the given expression 
    */
-  public void setAnswer(String answer);
+  public void setAnswer(String result);
   
   /**
    * Add an observer to detect when the submit action has been performed.
