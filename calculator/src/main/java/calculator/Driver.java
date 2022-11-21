@@ -1,24 +1,15 @@
 package calculator;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import calculator.controller.CalcController;
 
-public class Driver extends Application{
+/**
+ * The programme starts of by executing the main. 
+ *
+ * @author HIJI
+ */
+public class Driver  {
 
   public static void main(String[] args) {
-    launch(args);
-  }
-
-  @Override
-  public void start(Stage primaryStage) throws Exception {
-    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("GUIView.fxml"));
-    Scene scene = new Scene(root, 344, 142);
-    primaryStage.setScene(scene);
-    primaryStage.setResizable(false);
-    primaryStage.setTitle("CS2800 CW2 Calculator");
-    primaryStage.show();      
+    Launcher.startJavaFx(new CalcController(), args);
   }
 }
