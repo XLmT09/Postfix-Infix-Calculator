@@ -23,6 +23,7 @@ public class CalcController {
     try {
       view.setAnswer("" + model.evaluate(view.getExpression()));
     } catch (InvalidExpressionException e) {
+      //custom error messages have been written, so we just call the getMessage method
       view.setAnswer(e.getMessage());
     }
   }

@@ -192,4 +192,10 @@ class TestRevPolishCalc {
         "Operators can only be *, +, -, /");
   }
   
+  @Test 
+  void testNoOperators() {
+    assertThrows(InvalidExpressionException.class, () -> calc.evaluate("10 10"), 
+        "This is an invalid expression as there are two numbers and no operators");
+  }
+  
 }
