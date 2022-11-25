@@ -14,7 +14,9 @@ import javafx.stage.Stage;
  * @author Dave
  */
 public class Launcher extends Application {
-
+  //Width and height of the application
+  private final int width = 450;
+  private final int height = 200;
   /**
    * Used to pass information into main since JavaFX requires a specified signature for main the
    * method.
@@ -46,13 +48,15 @@ public class Launcher extends Application {
 
     Scene scene = null;
     try {
-      scene = new Scene(loader.load(), 400, 400);
+      scene = new Scene(loader.load(), width, height);
     } catch (IOException e) {
       // Do Nothing - there is nothing to be done.
       e.printStackTrace();
     }
     myController.addView(loader.getController());
     primaryStage.setScene(scene);
+    primaryStage.setResizable(false);
+    primaryStage.setTitle("Postfix/Infix Calculator");
     primaryStage.show();
   }
 
