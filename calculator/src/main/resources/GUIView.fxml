@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="142.0" prefWidth="344.0" style="-fx-background-color: #009999;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.GuiView">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="450.0" style="-fx-background-color: #009999;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.GuiView">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.79998779296875" minWidth="10.0" prefWidth="167.20001220703125" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="282.4000244140625" minWidth="10.0" prefWidth="176.79998779296875" />
@@ -28,15 +28,15 @@
             <Insets left="30.0" />
          </GridPane.margin>
          <font>
-            <Font name="Calibri Bold" size="16.0" />
+            <Font name="Calibri Bold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="input" maxWidth="200.0" prefHeight="26.0" prefWidth="270.0" style="-fx-border-color: black; -fx-background-color: #CCFFFF;" GridPane.columnSpan="2">
+      <TextField fx:id="input" maxWidth="339.0" prefHeight="46.0" prefWidth="339.0" style="-fx-border-color: black; -fx-background-color: #CCFFFF;" GridPane.columnSpan="2">
          <GridPane.margin>
             <Insets left="100.0" />
          </GridPane.margin>
          <font>
-            <Font name="Calibri" size="16.0" />
+            <Font name="Calibri" size="24.0" />
          </font>
       </TextField>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output:" GridPane.columnSpan="2" GridPane.rowIndex="1">
@@ -44,41 +44,44 @@
             <Insets left="30.0" />
          </GridPane.margin>
          <font>
-            <Font name="Calibri Bold" size="16.0" />
+            <Font name="Calibri Bold" size="24.0" />
          </font>
       </Text>
-      <Text id="container" fx:id="answer" fill="#000203" strokeType="OUTSIDE" strokeWidth="0.0" text="NULL" wrappingWidth="199.717529296875" GridPane.rowIndex="1">
+      <Text id="container" fx:id="answer" fill="#000203" strokeType="OUTSIDE" strokeWidth="0.0" text="NULL" wrappingWidth="307.717529296875" GridPane.columnSpan="2" GridPane.rowIndex="1">
          <GridPane.margin>
-            <Insets left="100.0" />
+            <Insets left="130.0" />
          </GridPane.margin>
          <font>
-            <Font name="Calibri" size="16.0" />
+            <Font name="Calibri" size="24.0" />
          </font>
       </Text>
       <HBox prefHeight="48.0" prefWidth="341.0" spacing="10.0" style="-fx-background-color: #00CCCC;" GridPane.columnSpan="2" GridPane.rowIndex="2">
          <children>
             <Button fx:id="submit" mnemonicParsing="false" style="-fx-background-color: #CCFFFF; -fx-cursor: hand; -fx-border-color: black;" text="Calculate">
                <font>
-                  <Font name="Calibri Bold" size="16.0" />
+                  <Font name="Calibri Bold" size="18.0" />
                </font>
                <HBox.margin>
-                  <Insets left="30.0" top="7.0" />
+                  <Insets left="30.0" top="13.0" />
                </HBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </Button>
             <RadioButton mnemonicParsing="false" style="-fx-cursor: hand;" text="Polish">
                <font>
-                  <Font name="Calibri Bold Italic" size="12.0" />
+                  <Font name="Calibri Bold Italic" size="18.0" />
                </font>
                <HBox.margin>
-                  <Insets left="50.0" top="15.0" />
+                  <Insets left="50.0" top="18.0" />
                </HBox.margin>
             </RadioButton>
             <RadioButton mnemonicParsing="false" style="-fx-cursor: hand;" text="Infix">
                <font>
-                  <Font name="Calibri Bold Italic" size="12.0" />
+                  <Font name="Calibri Bold Italic" size="18.0" />
                </font>
                <HBox.margin>
-                  <Insets left="10.0" top="15.0" />
+                  <Insets left="10.0" top="18.0" />
                </HBox.margin>
             </RadioButton>
          </children>
