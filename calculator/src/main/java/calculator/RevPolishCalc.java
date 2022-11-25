@@ -31,7 +31,7 @@ public class RevPolishCalc implements Calculator {
         return val2 / val1;
       // If operators above are not recognised then its invalid
       default:
-        throw new InvalidExpressionException("Expression contains an invalid" + "operator");
+        throw new InvalidExpressionException("Expression contains an invalid operator");
     }
   }
 
@@ -50,7 +50,9 @@ public class RevPolishCalc implements Calculator {
     String[] expressionParts = expression.split(" ");
     // This regular expression checks if a string is an integer or decimal
     String regex = "[-]*[0-9]+[\\.]?[0-9]*";
-
+    //result of the evaluation stored here
+    float result;
+    
     // loop through elements of an expression
     for (String part : expressionParts) {
       // check if string element is a number
@@ -70,7 +72,12 @@ public class RevPolishCalc implements Calculator {
       }
     }
 
+    result = stackValues.pop();
+    //If stack is not empty then the expression was not valid
+    if (!stackValues.isEmpty()) {
+      throw new InvalidExpressionException("Invalid expression for reverse polish");
+    }
     // last value in the stack contains the result
-    return stackValues.pop();
+    return result;
   }
 }
