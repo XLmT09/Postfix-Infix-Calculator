@@ -1,5 +1,6 @@
 package calculator.controller;
 
+import calculator.InvalidExpressionException;
 import calculator.RevPolishCalc;
 import calculator.ViewInterface;
 
@@ -19,7 +20,11 @@ public class CalcController {
   
   //Performs evaluation for a given expression, where evaluation depends on the model type
   private void calculate() {
-    view.setAnswer("" + model.evaluate(view.getExpression()));
+    try {
+      view.setAnswer("" + model.evaluate(view.getExpression()));
+    } catch (InvalidExpressionException e) {
+      view.setAnswer(e.getMessage());
+    }
   }
   
   /**
