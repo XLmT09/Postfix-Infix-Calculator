@@ -1,4 +1,8 @@
 # **Release Notes**
+## Release-1.3
+### 25/11/2022
+### Bug Fix
+- Fixed bug for a special case where when a user types **10 10** as an expression it would not output an invalid expression. This is because there was no operators in this expression, to perform an evaluation.
 
 ## Release-1.2
 ### 25/11/2022
