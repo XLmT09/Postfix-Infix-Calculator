@@ -65,7 +65,7 @@ public class RevPolishCalc implements Calculator {
           // EmptyStackException is called if there isn't enough numbers in stack to
           // perform the operation
         } catch (EmptyStackException e) {
-          throw new InvalidExpressionException("Not a valid expression for" + "reverse polish");
+          throw new InvalidExpressionException("Invalid expression for reverse polish");
         }
       }
     }
