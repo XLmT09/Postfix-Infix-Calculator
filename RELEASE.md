@@ -1,7 +1,13 @@
 # **Release Notes**
 
+## Release-1.2
+### 25/11/2022
+### Bug Fix
+- Fixed bug where error message was not being output to screen when an invalid expression had been enterd.
+- Fixed bug where error message was not being outputed when unrecognisable operator was detected.
+
 ## Release-1.1 
-### 24/07/2022
+### 24/11/2022
 ### New
 - Font size has increased to make numbers easy to read.
 - Application is not resizable anymore to prevent components from overlapping one another.
@@ -10,7 +16,7 @@
 <br />
 
 ## Release-1.0 
-### 24/07/2022
+### 24/11/2022
 ### First Release
 - This application is a calculator which can currently solve reverse polish notion expressions.
 - The calculator can perfrom expressions with +, -, * and / operations.
