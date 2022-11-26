@@ -46,4 +46,11 @@ public class NumStack {
   public boolean isEmpty() {
     return stack.size() == 0;
   }
+  
+  /**
+   * Clear the {@link calculator.Stack Stack}.
+   */
+  public void clear() {
+    stack.clear();
+  }
 }
