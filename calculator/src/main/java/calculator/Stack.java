@@ -64,6 +64,9 @@ public class Stack {
     return entries.get(entries.size() - 1);
   }
   
+  /**
+   * Clears the {@code Stack}.
+   */
   public void clear() {
     entries.clear();
     size = 0;

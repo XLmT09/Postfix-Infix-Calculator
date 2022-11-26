@@ -59,5 +59,10 @@ class TestNumStack {
         "After stack has been popped it should be empty.");
   }
   
-
+  @Test
+  void testClearStack() {
+    numStack.clear();
+    assertEquals(true, numStack.isEmpty(),
+        "Stack size should be zero after clearing.");
+  }
 }

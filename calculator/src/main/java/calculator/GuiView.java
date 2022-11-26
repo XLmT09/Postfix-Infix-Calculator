@@ -12,7 +12,7 @@ import javafx.scene.text.Text;
  *
  * @author HIJI, Dave
  */
-public class GuiView implements ViewInterface{
+public class GuiView implements ViewInterface {
 
   /**
    * This allows a new observer to be added to the change calculate strategy action.
