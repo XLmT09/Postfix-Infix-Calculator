@@ -128,5 +128,11 @@ class TestStack {
       }
     }
   }
-
+  
+  @Test
+  void testClearStack() {
+    stack.clear();
+    assertEquals(0, stack.size(),
+        "Stack size should be zero after clearing.");
+  }
 }

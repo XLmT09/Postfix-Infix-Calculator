@@ -5,21 +5,28 @@ import java.util.EmptyStackException;
 import java.util.List;
 
 /**
- * This class represents a Stack of Entry values. 
+ * This class represents a Stack of Entry values.
  *
  * @author HIJI
  */
 public class Stack {
   private Integer size = 0;
-  private List<Entry> entries = new ArrayList<>();
-  
+  private List<Entry> entries;
+
+  /**
+   * Constructs a empty {@code Stack}.
+   */
+  public Stack() {
+    entries = new ArrayList<>();
+  }
+
   /**
    * Returns the {@code Stack} size.
    */
   public int size() {
     return size;
   }
-  
+
   /**
    * Adds a new Entry to the {@code Stack}.
    *
@@ -29,7 +36,7 @@ public class Stack {
     entries.add(newEntry);
     size++;
   }
-  
+
   /**
    * Return and removes the newest {@code Entry} from the {@code Stack}.
    *
@@ -42,8 +49,8 @@ public class Stack {
     }
     size--;
     return entries.remove(entries.size() - 1);
-  }  
-  
+  }
+
   /**
    * Returns the newest {@code Entry} from the {@code Stack} but wont remove it.
    *
@@ -57,7 +64,8 @@ public class Stack {
     return entries.get(entries.size() - 1);
   }
   
-  
-  
-  
+  public void clear() {
+    entries.clear();
+    size = 0;
+  }
 }
