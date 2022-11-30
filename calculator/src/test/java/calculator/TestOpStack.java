@@ -30,6 +30,7 @@ class TestOpStack {
     opStack.push(Symbol.MINUS);
     assertEquals(opStack.pop(), Symbol.MINUS,
         "Pushed a minus symbol, so when popped i should get minus symbol");
+    assertEquals(opStack.isEmpty(), true, "After stack has been popped it should be empty.");
   }
 
 

@@ -29,9 +29,11 @@ public class OpStack {
   /**
    * Converts the passed {@link calculator.Symbol Symbol} to an {@link calculator.Entry Entry}
    * object and added to the {@code NumStack}.
+   *
+   * @param sym The value to be converted to an {@link calculator.Entry Entry} object.
    */
   public void push(Symbol sym) {
-    stack.push(new Entry(Symbol.PLUS));
+    stack.push(new Entry(sym));
   }
 
   /**
@@ -42,7 +44,7 @@ public class OpStack {
    *         value
    */
   public Symbol pop() {
-    return Symbol.MINUS;
+    return stack.pop().getSymbol();
   }
 
 }
