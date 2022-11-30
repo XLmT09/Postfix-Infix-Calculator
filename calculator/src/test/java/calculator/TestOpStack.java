@@ -22,7 +22,7 @@ class TestOpStack {
   @Test
   void testOpStackPush() {
     opStack.push(Symbol.PLUS);
-    // assertEquals(opStack.isEmpty(), false, "Adding Entry to stack wont make it empty.");
+    assertEquals(opStack.isEmpty(), false, "Adding Entry to stack wont make it empty.");
   }
 
 

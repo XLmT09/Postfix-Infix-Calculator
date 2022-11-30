@@ -23,7 +23,7 @@ public class OpStack {
    * returns false.
    */
   public boolean isEmpty() {
-    return true;
+    return stack.size() < 1;
   }
 
   /**
