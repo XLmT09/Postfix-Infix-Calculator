@@ -9,20 +9,29 @@ package calculator;
  */
 public class OpStack {
   private Stack stack;
-  
+
   /**
-   * Constructs a new {@code OpStack} object and
-   * initialises an empty {@link calculator.Stack Stack}. 
+   * Constructs a new {@code OpStack} object and initialises an empty {@link calculator.Stack
+   * Stack}.
    */
   public OpStack() {
     stack = new Stack();
   }
-  
+
   /**
-   * Returns true if {@code OpStack} has no {@link calculator.Entry Entry} 
-   * objects otherwise it returns false.
+   * Returns true if {@code OpStack} has no {@link calculator.Entry Entry} objects otherwise it
+   * returns false.
    */
   public boolean isEmpty() {
     return true;
+  }
+
+  /**
+   * Converts the passed {@link calculator.Symbol Symbol} to an {@link calculator.Entry Entry}
+   * object and added to the {@code NumStack}.
+   *
+   *   */
+  public void push(Symbol sym) {
+    stack.push(new Entry(Symbol.PLUS));
   }
 }

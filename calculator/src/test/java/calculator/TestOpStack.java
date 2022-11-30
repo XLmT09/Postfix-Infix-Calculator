@@ -6,17 +6,24 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestOpStack {
-  private OpStack stack;
-  
+  private OpStack opStack;
+
   @BeforeEach
   void setUp() {
-    stack = new OpStack();
+    opStack = new OpStack();
   }
 
   @Test
   void testOpStackIsEmpty() {
-    assertEquals(stack.isEmpty(), true, 
+    assertEquals(opStack.isEmpty(), true,
         "Nothing is added to stack when created so returns true.");
   }
+
+  @Test
+  void testOpStackPush() {
+    opStack.push(Symbol.PLUS);
+    // assertEquals(opStack.isEmpty(), false, "Adding Entry to stack wont make it empty.");
+  }
+
 
 }
