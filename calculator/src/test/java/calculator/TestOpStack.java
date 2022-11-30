@@ -25,5 +25,13 @@ class TestOpStack {
     assertEquals(opStack.isEmpty(), false, "Adding Entry to stack wont make it empty.");
   }
 
+  @Test
+  void testOpStackPop() {
+    opStack.push(Symbol.MINUS);
+    assertEquals(opStack.pop(), Symbol.MINUS,
+        "Pushed a minus symbol, so when popped i should get minus symbol");
+  }
+
+
 
 }

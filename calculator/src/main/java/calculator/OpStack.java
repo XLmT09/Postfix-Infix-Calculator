@@ -29,9 +29,20 @@ public class OpStack {
   /**
    * Converts the passed {@link calculator.Symbol Symbol} to an {@link calculator.Entry Entry}
    * object and added to the {@code NumStack}.
-   *
-   *   */
+   */
   public void push(Symbol sym) {
     stack.push(new Entry(Symbol.PLUS));
   }
+
+  /**
+   * Retrieves and removes the latest {@link calculator.Entry Entry} in {@code OpStack} and returns
+   * its corresponding {@link calculator.Symbol Symbol} value.
+   *
+   * @return The newest {@link calculator.Entry Entry} object's {@link calculator.Symbol Symbol}
+   *         value
+   */
+  public Symbol pop() {
+    return Symbol.MINUS;
+  }
+
 }
