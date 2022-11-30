@@ -1,5 +1,7 @@
 package calculator;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +14,9 @@ class TestOpStack {
   }
 
   @Test
-  void test() {
+  void testOpStackIsEmpty() {
+    assertEquals(stack.isEmpty(), true, 
+        "Nothing is added to stack when created so returns true.");
   }
 
 }
