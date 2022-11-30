@@ -1,17 +1,18 @@
 package calculator;
 
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestOpStack {
-
+  private OpStack stack;
+  
   @BeforeEach
-  void setUp() throws Exception {}
+  void setUp() {
+    stack = new OpStack();
+  }
 
   @Test
   void test() {
-    fail("Not yet implemented");
   }
 
 }

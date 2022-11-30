@@ -8,5 +8,8 @@ package calculator;
  * @author HIJI
  */
 public class OpStack {
-
+  
+  public Stack() {
+    
+  }
 }
