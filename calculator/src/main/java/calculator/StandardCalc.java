@@ -27,7 +27,9 @@ public class StandardCalc implements Calculator {
       // check if string element is a number
       if (part.equals("+")) {
         opStack.push(Symbol.PLUS);
-      } else {
+      } else if (part.equals("-")) {
+        opStack.push(Symbol.MINUS);
+      }  else {
         postfix += part + " ";
       }
     }
