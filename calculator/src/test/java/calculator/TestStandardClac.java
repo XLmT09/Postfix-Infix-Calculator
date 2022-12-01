@@ -18,6 +18,11 @@ class TestStandardClac {
     assertEquals(3.0f, calc.evaluate("3"));
     assertEquals(4.0f, calc.evaluate("4"));
   }
+  
+  @Test
+  void testBasicAddition() {
+    assertEquals(6.0f, calc.evaluate("3 + 3"));
+  }
 
 
 }
