@@ -16,6 +16,7 @@ class TestStandardClac {
   @Test
   void testSingleNumberExpression() {
     assertEquals(3.0f, calc.evaluate("3"));
+    assertEquals(4.0f, calc.evaluate("4"));
   }
 
 

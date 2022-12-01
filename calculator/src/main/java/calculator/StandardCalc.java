@@ -11,6 +11,6 @@ public class StandardCalc implements Calculator {
 
   @Override
   public float evaluate(String expression) {
-    return 3.0f;
+    return Float.parseFloat(expression);
   }
 }
