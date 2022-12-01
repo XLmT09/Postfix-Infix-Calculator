@@ -29,6 +29,8 @@ public class StandardCalc implements Calculator {
         opStack.push(Symbol.PLUS);
       } else if (part.equals("-")) {
         opStack.push(Symbol.MINUS);
+      } else if (part.equals("*")) {
+        opStack.push(Symbol.TIMES);
       }  else {
         postfix += part + " ";
       }

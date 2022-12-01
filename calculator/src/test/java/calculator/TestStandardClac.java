@@ -22,12 +22,20 @@ class TestStandardClac {
   @Test
   void testBasicAddition() {
     assertEquals(6.0f, calc.evaluate("3 + 3"));
+    assertEquals(7.0f, calc.evaluate("4 + 3"));
+    assertEquals(0.0f, calc.evaluate("-3 + 3"));
   }
   
   @Test
   void testBasicSubtraction() {
     assertEquals(1.0f, calc.evaluate("4 - 3"));
+    assertEquals(8.0f, calc.evaluate("10 - 2"));
   }
 
+  @Test
+  void testBasicMultiplication() {
+    assertEquals(12.0f, calc.evaluate("4 * 3"));
+    assertEquals(-32.0f, calc.evaluate("-8 * 4"));
+  }
 
 }
