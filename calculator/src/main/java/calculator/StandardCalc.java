@@ -5,7 +5,12 @@ package calculator;
  *
  * @author HIJI
  */
-public class StandardCalc {
+public class StandardCalc implements Calculator { 
   
   public StandardCalc() {}
+
+  @Override
+  public float evaluate(String expression) {
+    return 3.0f;
+  }
 }
