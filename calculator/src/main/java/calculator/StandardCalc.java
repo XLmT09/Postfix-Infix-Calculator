@@ -31,6 +31,8 @@ public class StandardCalc implements Calculator {
         opStack.push(Symbol.MINUS);
       } else if (part.equals("*")) {
         opStack.push(Symbol.TIMES);
+      } else if (part.equals("/")) {
+        opStack.push(Symbol.DIVIDE);
       }  else {
         postfix += part + " ";
       }

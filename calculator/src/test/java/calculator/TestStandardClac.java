@@ -38,4 +38,9 @@ class TestStandardClac {
     assertEquals(-32.0f, calc.evaluate("-8 * 4"));
   }
 
+  @Test
+  void testBasicDivision() {
+    assertEquals(0.75f, calc.evaluate("3 / 4"));
+    assertEquals(-4.0f, calc.evaluate("-8 / 2"));
+  }
 }
