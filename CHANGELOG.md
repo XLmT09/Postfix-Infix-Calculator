@@ -1,9 +1,33 @@
 # **Changelog**
+## **Release-2.0 , 01-12-2022 to 02-12-2022**
+### <span style="background-color:#196F3D;padding:3px;border;border-radius: 3px;">**Feature Added**</span>
+- Create a new feature branch called **feature-STANDARD_CALC** to evaluate infix expressions in the backend, by converting the infix expression to postfix.
+#### <span style="background-color:#2874A6;padding:3px;border;border-radius: 3px;">**Additions using TDD**</span> 
+- Made a new class called StandardCalc which evaluates infix expressions using the evaluate method, it also checks for operator precedence.
+#### <span style="background-color:#6C3483;padding:3px;border;border-radius: 3px;">**Merge**</span> 
+- Merge feature-STANDARD_CALC back to main.
+
+<br />
+
+## **Release-2.0 , 30-11-2022**
+### <span style="background-color:#196F3D;padding:3px;border;border-radius: 3px;">**Feature Added**</span>
+- Create a new feature branch called **feature-OP_STACK** to develop an OpStack, which will be a stack to hold operators. This will be needed for the development of the Shunting Algorithm to evaluate infix operations.
+#### <span style="background-color:#2874A6;padding:3px;border;border-radius: 3px;">**Additions using TDD**</span> 
+- Created a new OpStack class which is a stack that will hold Symbols.
+- OpStack class also contains three methods:
+    1. **isEmpty** method, to check if it is empty using the size method from stack.
+    2. **push** method, to add Entry which represents Symbols into the stack.
+    3. **pop** method which pops latest Symbol from stack, and throws exception if stack is empty.
+#### <span style="background-color:#6C3483;padding:3px;border;border-radius: 3px;">**Merge**</span> 
+- Merge feature-OP_STACK back to main.
+
+<br />
 
 ## **Release-1.5 , 30-11-2022**
 ### <span style="background-color:#196F3D;padding:3px;border;border-radius: 3px;">**Added**</span>
 - Added release notes for release-1.5.
 - Remvoed scientif notation so outputs are just purely numbers, decimal format class was used to do this.
+
 <br />
 
 ## **Release-1.4 , 26-11-2022**
