@@ -63,4 +63,9 @@ class TestStandardClac {
     assertEquals(1.5f, calc.evaluate("5 - 7 / 2"));
     assertEquals(35f, calc.evaluate("8 + 9 * 3"));
   }
+  
+  @Test
+  void testBrackets() {
+    assertEquals(-6f, calc.evaluate("( 4 - 6 ) * 3"));
+  }
 }

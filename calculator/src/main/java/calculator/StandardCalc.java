@@ -29,6 +29,28 @@ public class StandardCalc implements Calculator {
     }
   }
 
+  private void push(String sym) {
+    switch (sym) {
+      case "/":
+        opStack.push(Symbol.DIVIDE);
+        break;
+      case "*":
+        opStack.push(Symbol.TIMES);
+        break;
+      case "+":
+        opStack.push(Symbol.PLUS);
+        break;
+      case "-":
+        opStack.push(Symbol.MINUS);
+        break;
+      case "(":
+        opStack.push(Symbol.LEFT_BRACKET);
+        break;
+      default:
+        return;
+    }
+  }
+
   @Override
   public float evaluate(String expression) {
     // Split and store components of expression in an array
@@ -43,19 +65,18 @@ public class StandardCalc implements Calculator {
       // check if string element is a number
       if (part.matches(regex)) {
         postfix += part + " ";
+      } else if (part.equals("(")) {
+        push(part);
+      } else if (part.equals(")")) {
+        while (!opStack.isEmpty() && !(opStack.peek().equals("("))) {
+          postfix += opStack.pop().toString() + " ";
+        }
+        opStack.pop();
       } else {
         while (!opStack.isEmpty() && (precedence(part) <= precedence(opStack.peek()))) {
           postfix += opStack.pop().toString() + " ";
         }
-        if (part.equals("+")) {
-          opStack.push(Symbol.PLUS);
-        } else if (part.equals("-")) {
-          opStack.push(Symbol.MINUS);
-        } else if (part.equals("*")) {
-          opStack.push(Symbol.TIMES);
-        } else if (part.equals("/")) {
-          opStack.push(Symbol.DIVIDE);
-        }
+        push(part);
       }
     }
 
