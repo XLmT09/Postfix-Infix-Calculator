@@ -50,6 +50,8 @@ class TestStandardClac {
   @Test
   void testTwoOperation() {
     assertEquals(13f, calc.evaluate("3 + 4 + 6"));
+    assertEquals(-11f, calc.evaluate("3 - 8 - 6"));
+    assertEquals(1.25f, calc.evaluate("10 / 2 / 4"));
     assertEquals(270f, calc.evaluate("5 * 9 * 6"));
   }
 }
