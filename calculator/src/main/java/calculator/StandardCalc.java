@@ -1,7 +1,5 @@
 package calculator;
 
-import java.util.EmptyStackException;
-
 /**
  * This class evaluates infix {@code String} expressions.
  *
@@ -16,6 +14,21 @@ public class StandardCalc implements Calculator {
     rpCalc = new RevPolishCalc();
   }
 
+  private int precedence(String operation) {
+    switch (operation) {
+      case "/":
+        return 4;
+      case "*":
+        return 3;
+      case "+":
+        return 2;
+      case "-":
+        return 1;
+      default:
+        return 0;
+    }
+  }
+
   @Override
   public float evaluate(String expression) {
     // Split and store components of expression in an array
@@ -24,14 +37,14 @@ public class StandardCalc implements Calculator {
     String regex = "[-]*[0-9]+[\\.]?[0-9]*";
     // Forming postfix expression
     String postfix = "";
-    
+
     // loop through elements of an expression
     for (String part : expressionParts) {
       // check if string element is a number
       if (part.matches(regex)) {
         postfix += part + " ";
       } else {
-        while (!opStack.isEmpty()) {
+        while (!opStack.isEmpty() && (precedence(part) <= precedence(opStack.peek()))) {
           postfix += opStack.pop().toString() + " ";
         }
         if (part.equals("+")) {
@@ -45,11 +58,11 @@ public class StandardCalc implements Calculator {
         }
       }
     }
-    
+
     while (!opStack.isEmpty()) {
       postfix += opStack.pop().toString() + " ";
     }
-    
+
     return rpCalc.evaluate(postfix);
   }
 }
