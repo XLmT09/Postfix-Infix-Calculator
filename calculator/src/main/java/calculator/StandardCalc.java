@@ -38,8 +38,8 @@ public class StandardCalc implements Calculator {
       }
     }
     
-    if (!opStack.isEmpty()) {
-      postfix += opStack.pop().toString();
+    while (!opStack.isEmpty()) {
+      postfix += opStack.pop().toString() + " ";
     }
     
     return rpCalc.evaluate(postfix);

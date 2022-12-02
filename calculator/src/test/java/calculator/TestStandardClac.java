@@ -8,11 +8,13 @@ import org.junit.jupiter.api.Test;
 class TestStandardClac {
   private StandardCalc calc;
   
+  //Initiated for each test case
   @BeforeEach
   void setUp() {
     calc = new StandardCalc();
   }
   
+  //Expressions with just numbers should just output a number
   @Test
   void testSingleNumberExpression() {
     assertEquals(3.0f, calc.evaluate("3"));
@@ -42,5 +44,12 @@ class TestStandardClac {
   void testBasicDivision() {
     assertEquals(0.75f, calc.evaluate("3 / 4"));
     assertEquals(-4.0f, calc.evaluate("-8 / 2"));
+  }
+  
+  //Test if multiple of the same operators work in a expression
+  @Test
+  void testTwoOperation() {
+    assertEquals(13f, calc.evaluate("3 + 4 + 6"));
+    assertEquals(270f, calc.evaluate("5 * 9 * 6"));
   }
 }
