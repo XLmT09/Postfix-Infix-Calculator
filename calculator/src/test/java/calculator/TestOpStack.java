@@ -56,6 +56,10 @@ class TestOpStack {
         "After stack has been popped it should be empty.");
   }
 
-
+  @Test
+  void testOpStackPeek() {
+    opStack.push(Symbol.DIVIDE);
+    assertEquals("/", opStack.peek(), "Pushed divide symbol so should be on top when peeking.");
+  }
 
 }

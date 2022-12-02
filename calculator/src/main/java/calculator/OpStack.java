@@ -47,4 +47,14 @@ public class OpStack {
     return stack.pop().getSymbol();
   }
 
+  /**
+   * Looks at the {@link calculator.Entry Entry} {@link calculator.Symbol Symbol} on top of the
+   * {@link calculator.Stack Stack}.
+   *
+   * @return The {@link calculator.Symbol Symbol} {@code String} code.
+   */
+  public String peek() {
+    return stack.pop().getSymbol().toString();
+  }
+
 }
