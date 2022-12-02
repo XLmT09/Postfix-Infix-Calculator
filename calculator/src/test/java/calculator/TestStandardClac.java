@@ -1,7 +1,7 @@
 package calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -67,5 +67,11 @@ class TestStandardClac {
   @Test
   void testBrackets() {
     assertEquals(-6f, calc.evaluate("( 4 - 6 ) * 3"));
+  }
+  
+  @Test
+  void testBadExpression() {
+    assertThrows(InvalidExpressionException.class, () -> calc.evaluate("3 + + 3"), 
+        "This is an invalid expression as there are two plus operators next to each other");
   }
 }
