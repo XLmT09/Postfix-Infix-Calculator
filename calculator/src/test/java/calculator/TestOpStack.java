@@ -2,6 +2,7 @@ package calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import java.util.EmptyStackException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -60,6 +61,8 @@ class TestOpStack {
   void testOpStackPeek() {
     opStack.push(Symbol.DIVIDE);
     assertEquals("/", opStack.peek(), "Pushed divide symbol so should be on top when peeking.");
+    assertEquals(opStack.isEmpty(), false,
+        "Peek should not remove element from stack.");
   }
 
 }

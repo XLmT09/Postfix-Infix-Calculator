@@ -54,7 +54,7 @@ public class OpStack {
    * @return The {@link calculator.Symbol Symbol} {@code String} code.
    */
   public String peek() {
-    return stack.pop().getSymbol().toString();
+    return stack.top().getSymbol().toString();
   }
 
 }
