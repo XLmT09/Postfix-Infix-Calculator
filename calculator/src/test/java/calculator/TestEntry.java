@@ -18,7 +18,6 @@ class TestEntry {
   void setup() {
     numEntry = new Entry(2.0f);
     symbolEntry = new Entry(Symbol.LEFT_BRACKET);
-    strEntry = new Entry("2");
   }
   
   @Test
@@ -113,8 +112,6 @@ class TestEntry {
         "If Entry is NUMBER type and has the same number value then returns true.");
     assertEquals(symbolEntry.equals(new Entry(Symbol.LEFT_BRACKET)), true, 
         "If Entry has same SYMBOL type and the same Symbol enum then return true.");
-    assertEquals(strEntry.equals(new Entry("2")), true, 
-        "If Entry has same STRING type and the same str value then return true.");
   }
 
   @Test 
@@ -123,8 +120,6 @@ class TestEntry {
         "return false as Entry float values are different values.");
     assertEquals(symbolEntry.equals(new Entry(Symbol.RIGHT_BRACKET)), false,
         "return false as symbols are different enums.");
-    assertEquals(strEntry.equals(new Entry("3")), false, 
-        "return false as Entry str values are different.");
     assertEquals(numEntry.equals(symbolEntry), false, 
         "return false as Entry type NUMBER and SYMBOL are different.");
     assertEquals(strEntry.equals(numEntry), false, 

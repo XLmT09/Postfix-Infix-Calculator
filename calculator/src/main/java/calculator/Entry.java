@@ -15,7 +15,6 @@ import java.util.Objects;
 public class Entry {
   private float number;
   private Symbol other;
-  private String str;
   private Type type;
 
   /**
@@ -37,17 +36,6 @@ public class Entry {
   public Entry(Symbol which) {
     other = which;
     type = Type.SYMBOL;
-  }
-
-  /**
-   * Constructs a new {@code Entry} of type {@code STRING}.
-   *
-   * @param newStr The string the {@code Entry} class will hold
-   */
-  public Entry(String newStr) {
-    str = newStr;
-    type = Type.STRING;
-    other = Symbol.INVALID;
   }
 
   /**
@@ -85,7 +73,7 @@ public class Entry {
 
   @Override
   public int hashCode() {
-    return Objects.hash(number, other, str, type);
+    return Objects.hash(number, other, type);
   }
 
   /**
@@ -104,16 +92,13 @@ public class Entry {
     }
     Entry otherEntry = (Entry) obj;
     return type.equals(otherEntry.type) && other.equals(otherEntry.other)
-        && number == otherEntry.number && (str == null || str.equals(otherEntry.str));
+        && number == otherEntry.number;
   }
 
   @Override
   public String toString() {
     if (type == Type.NUMBER) {
       return "" + number;
-    }
-    if (type == Type.STRING) {
-      return str;
     }
     if (type == Type.SYMBOL) {
       return other.toString();
