@@ -68,28 +68,38 @@ public class StandardCalc implements Calculator {
     String[] expressionParts = expression.split(" ");
     // This regular expression checks if a string is an integer or decimal
     String regex = "[-]*[0-9]+[\\.]?[0-9]*";
+    // checj if previous part was a number
+    boolean prevNumber = false;
     // Forming postfix expression
     String postfix = "";
-
+    
+    
     // loop through elements of an expression
     for (String part : expressionParts) {
       // check if string element is a number
       if (part.matches(regex)) {
+        if (prevNumber) {
+          throw new InvalidExpressionException("Not a infix expression");
+        }
         postfix += part + " ";
+        prevNumber = true;
       } else if (part.equals("(")) {
         push(part);
+        prevNumber = false;
       } else if (part.equals(")")) {
         // If there is a close bracket, then keep popping operators until open bracket is found.
         while (!opStack.isEmpty() && !(opStack.peek().equals("("))) {
           postfix += opStack.pop().toString() + " ";
         }
         opStack.pop();
+        prevNumber = false;
       } else {
         //Keep popping if top operator on stack has a greater priority.
         while (!opStack.isEmpty() && (precedence(part) <= precedence(opStack.peek()))) {
           postfix += opStack.pop().toString() + " ";
         }
         push(part);
+        prevNumber = false;
       }
     }
 

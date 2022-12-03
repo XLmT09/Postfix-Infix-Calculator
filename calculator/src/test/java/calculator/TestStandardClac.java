@@ -74,4 +74,10 @@ class TestStandardClac {
     assertThrows(InvalidExpressionException.class, () -> calc.evaluate("3 + + 3"), 
         "This is an invalid expression as there are two plus operators next to each other");
   }
+  
+  @Test
+  void testRevPolishExpression() {
+    assertThrows(InvalidExpressionException.class, () -> calc.evaluate("3 3 +"), 
+        "RevPolish should not be valid in infix expressions.");
+  }
 }
