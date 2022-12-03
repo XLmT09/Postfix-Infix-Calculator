@@ -1,4 +1,22 @@
 # **Release Notes**
+## **Release-2.0**
+### 📅03/12/2022
+### 🌟New
+- Calculator can now perform infix expressions.
+An example🔎:
+<pre>
+    Before: 68 * 2 / 4 
+    Outputs: 34
+</pre>
+- Radio buttons on calculator to switch between postfox and infix.
+- Infix expressions will give operations prority symbols to follow BIDMAS. List of prority from highest to lowest:
+    1. Brackets
+    2. Division
+    3. Multiply
+    4. Addition
+    5. Subtraction
+<br />
+
 ## **Release-1.5**
 ### 📅30/11/2022
 ### 🌟New
