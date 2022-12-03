@@ -8,9 +8,11 @@ package calculator;
 public class CalcModel {
   private Calculator currentState;
   private Calculator scalc;
+  private Calculator rcalc;
   
   public CalcModel() {
     scalc = new StandardCalc();
+    rcalc = new RevPolishCalc();
   }
   
   /**
@@ -21,6 +23,8 @@ public class CalcModel {
   public void setState(boolean isInfix) {
     if (isInfix) {
       currentState = scalc;
+    } else {
+      currentState = rcalc;
     }
   }
   
