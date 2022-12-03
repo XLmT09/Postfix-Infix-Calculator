@@ -1,4 +1,4 @@
-package calculator;
+package exceptions;
 
 /**
  * This exception is thrown when an expression is in a invalid format, or contains

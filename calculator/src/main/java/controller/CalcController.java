@@ -1,12 +1,12 @@
-package calculator.controller;
+package controller;
 
-import calculator.CalcModel;
-import calculator.InvalidExpressionException;
-import calculator.OpType;
-import calculator.ViewInterface;
+import enums.OpType;
+import exceptions.InvalidExpressionException;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
+import model.CalcModel;
+import view.ViewInterface;
 
 
 /**

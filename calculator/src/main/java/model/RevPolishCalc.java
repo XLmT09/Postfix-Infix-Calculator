@@ -1,6 +1,8 @@
-package calculator;
+package model;
 
+import exceptions.InvalidExpressionException;
 import java.util.EmptyStackException;
+import stack.NumStack;
 
 /**
  * This class evaluates reverse polish {@code String} expressions.
@@ -12,7 +14,7 @@ public class RevPolishCalc implements Calculator {
   private NumStack stackValues;
 
   /**
-   * Initialises an empty {@link calculator.NumStack NumStack}.
+   * Initialises an empty {@link stack.NumStack NumStack}.
    */
   public RevPolishCalc() {
     stackValues = new NumStack();
@@ -41,7 +43,7 @@ public class RevPolishCalc implements Calculator {
    * @param expression The {@code String} to be evaluated
    * @return The solution for the expression
    * @throws InvalidExpressionException If there are not enough numbers in
-   *         {@link calculator.NumStack NumStack} during calculation, or if expression contains an
+   *         {@link stack.NumStack NumStack} during calculation, or if expression contains an
    *         invalid operator. This means operator must be: +, -, * or /.
    */
   @Override

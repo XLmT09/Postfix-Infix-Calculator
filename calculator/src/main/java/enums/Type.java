@@ -1,4 +1,4 @@
-package calculator;
+package enums;
 
 /**
  * A list of the types of value an Entry can represent.

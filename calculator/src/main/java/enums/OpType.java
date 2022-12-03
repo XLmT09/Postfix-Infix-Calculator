@@ -1,4 +1,4 @@
-package calculator;
+package enums;
 
 /**
  * The ways a calculator can perform evaluation on a expression.

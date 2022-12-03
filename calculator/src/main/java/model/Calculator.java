@@ -1,4 +1,4 @@
-package calculator;
+package model;
 
 /**
  * The {@code Calculator} interface gives user control over what type of 

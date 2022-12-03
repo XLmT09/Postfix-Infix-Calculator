@@ -1,5 +1,6 @@
-package calculator;
+package stack;
 
+import calculator.Entry;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.List;

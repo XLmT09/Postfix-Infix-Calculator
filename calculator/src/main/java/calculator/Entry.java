@@ -1,10 +1,13 @@
 package calculator;
 
+import enums.Symbol;
+import enums.Type;
+import exceptions.BadTypeException;
 import java.util.Objects;
 
 /**
- * This Entry class represents the values which can be stored in a stack,
- * the Entry class can only be of one {@code Type}.
+ * This Entry class represents the values which can be stored in a stack, the Entry class can only
+ * be of one {@code Type}.
  *
  * @author HIJI
  *
@@ -14,9 +17,9 @@ public class Entry {
   private Symbol other;
   private String str;
   private Type type;
-  
+
   /**
-   * Constructs a new {@code Entry} of type {@code NUMBER}. 
+   * Constructs a new {@code Entry} of type {@code NUMBER}.
    *
    * @param value The number the {@code Entry} class will hold
    */
@@ -25,7 +28,7 @@ public class Entry {
     type = Type.NUMBER;
     other = Symbol.INVALID;
   }
-  
+
   /**
    * Constructs a new {@code Entry} of type {@code SYMBOL}.
    *
@@ -35,7 +38,7 @@ public class Entry {
     other = which;
     type = Type.SYMBOL;
   }
-  
+
   /**
    * Constructs a new {@code Entry} of type {@code STRING}.
    *
@@ -46,37 +49,37 @@ public class Entry {
     type = Type.STRING;
     other = Symbol.INVALID;
   }
-  
+
   /**
    * Returns the {@code Type} of an {@code Entry}.
    */
   public Type getType() {
     return type;
   }
-  
+
   /**
-   * Returns the {@code Symbol} value an {@code Entry} represents. 
+   * Returns the {@code Symbol} value an {@code Entry} represents.
    *
    * @return other The {@code Symbol} an {@code Entry} holds
-   * @throws BadTypeException If {@code Entry} not of {@code Type SYMBOL} 
+   * @throws BadTypeException If {@code Entry} not of {@code Type SYMBOL}
    */
   public Symbol getSymbol() {
     if (getType() != Type.SYMBOL) {
       throw new BadTypeException("Entry must be Type: SYMBOL");
-    } 
+    }
     return other;
   }
-  
+
   /**
    * Returns the float value an {@code Entry} represents.
    *
    * @return number The float value an {@code Entry} holds
-   * @throws BadTypeException If {@code Entry} not of {@code Type NUMBER} 
+   * @throws BadTypeException If {@code Entry} not of {@code Type NUMBER}
    */
   public float getValue() {
     if (getType() != Type.NUMBER) {
       throw new BadTypeException("Entry must be Type: NUMBER");
-    } 
+    }
     return number;
   }
 
@@ -90,7 +93,7 @@ public class Entry {
    */
   @Override
   public boolean equals(Object obj) {
-    if (this == obj) { 
+    if (this == obj) {
       return true;
     }
     if (obj == null) {
@@ -100,10 +103,10 @@ public class Entry {
       return false;
     }
     Entry otherEntry = (Entry) obj;
-    return type.equals(otherEntry.type) && other.equals(otherEntry.other) 
+    return type.equals(otherEntry.type) && other.equals(otherEntry.other)
         && number == otherEntry.number && (str == null || str.equals(otherEntry.str));
   }
-  
+
   @Override
   public String toString() {
     if (type == Type.NUMBER) {
@@ -116,7 +119,7 @@ public class Entry {
       return other.toString();
     }
     return "inavlid";
-  } 
-  
-  
+  }
+
+
 }

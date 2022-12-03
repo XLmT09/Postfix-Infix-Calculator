@@ -1,4 +1,4 @@
-package calculator;
+package enums;
 
 /**
  * A list of the non-number tokens possible in an expression.

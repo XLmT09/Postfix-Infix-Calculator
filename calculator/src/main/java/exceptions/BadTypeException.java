@@ -1,4 +1,4 @@
-package calculator;
+package exceptions;
 
 /**
  * This exception is thrown when entry type is invalid.

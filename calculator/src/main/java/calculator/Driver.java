@@ -1,6 +1,6 @@
 package calculator;
 
-import calculator.controller.CalcController;
+import controller.CalcController;
 
 /**
  * The programme starts of by executing the main. 

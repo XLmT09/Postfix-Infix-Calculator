@@ -2,12 +2,13 @@ package calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import enums.OpType;
+import model.CalcModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestCalcModel {
   private CalcModel calc;
-  private RevPolishCalc rcalc;
   
   @BeforeEach
   void setUp() {

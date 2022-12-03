@@ -1,9 +1,12 @@
-package calculator;
+package stack;
+
+import calculator.Entry;
+import enums.Symbol;
 
 /**
- * The {@code OpStack} class will be a {@link calculator.Stack Stack} of {@link calculator.Symbol
+ * The {@code OpStack} class will be a {@link stack.Stack Stack} of {@link enums.Symbol
  * Symbols} for the Shunting Algorithm. We provide a facade to hide details of the
- * {@link calculator.Stack Stack}.
+ * {@link stack.Stack Stack}.
  *
  * @author HIJI
  */
@@ -11,7 +14,7 @@ public class OpStack {
   private Stack stack;
 
   /**
-   * Constructs a new {@code OpStack} object and initialises an empty {@link calculator.Stack
+   * Constructs a new {@code OpStack} object and initialises an empty {@link stack.Stack
    * Stack}.
    */
   public OpStack() {
@@ -27,7 +30,7 @@ public class OpStack {
   }
 
   /**
-   * Converts the passed {@link calculator.Symbol Symbol} to an {@link calculator.Entry Entry}
+   * Converts the passed {@link enums.Symbol Symbol} to an {@link calculator.Entry Entry}
    * object and added to the {@code NumStack}.
    *
    * @param sym The value to be converted to an {@link calculator.Entry Entry} object.
@@ -38,9 +41,9 @@ public class OpStack {
 
   /**
    * Retrieves and removes the latest {@link calculator.Entry Entry} in {@code OpStack} and returns
-   * its corresponding {@link calculator.Symbol Symbol} value.
+   * its corresponding {@link enums.Symbol Symbol} value.
    *
-   * @return The newest {@link calculator.Entry Entry} object's {@link calculator.Symbol Symbol}
+   * @return The newest {@link calculator.Entry Entry} object's {@link enums.Symbol Symbol}
    *         value
    */
   public Symbol pop() {
@@ -48,10 +51,10 @@ public class OpStack {
   }
 
   /**
-   * Looks at the {@link calculator.Entry Entry} {@link calculator.Symbol Symbol} on top of the
-   * {@link calculator.Stack Stack}.
+   * Looks at the {@link calculator.Entry Entry} {@link enums.Symbol Symbol} on top of the
+   * {@link stack.Stack Stack}.
    *
-   * @return The {@link calculator.Symbol Symbol} {@code String} code.
+   * @return The {@link enums.Symbol Symbol} {@code String} code.
    */
   public String peek() {
     return stack.top().getSymbol().toString();

@@ -1,4 +1,6 @@
-package calculator;
+package model;
+
+import enums.OpType;
 
 /**
  * A state class which switches between postfix and infix.
@@ -13,7 +15,7 @@ public class CalcModel {
   private Calculator rcalc;
   
   /**
-   * Initially sets the current state of the model to {@link calculator.RevPolishCalc
+   * Initially sets the current state of the model to {@link model.RevPolishCalc
    * RevPolishCalc}.
    */
   public CalcModel() {
