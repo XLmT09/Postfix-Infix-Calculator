@@ -1,4 +1,10 @@
 # **Release Notes**
+### 📅03/12/2022
+### 🪲Bug Fix
+- Remove bug where postfix expressions were being evaluated in infix mode.
+
+<br />
+
 ## **Release-2.0**
 ### 📅03/12/2022
 ### 🌟New
@@ -15,6 +21,7 @@ An example🔎:
     3. Multiply
     4. Addition
     5. Subtraction
+
 <br />
 
 ## **Release-1.5**
