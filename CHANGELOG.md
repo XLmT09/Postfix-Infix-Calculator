@@ -1,11 +1,25 @@
 # **Changelog**
+## **Release-2.0 , 03-12-2022**
+### <span style="background-color:#196F3D;padding:3px;border;border-radius: 3px;">**Feature Added**</span>
+- Create a new feature branch called **feature-CONNECT_INFIX_TO_GUI**, the goal is to get both postfix and infix calculations working on the GUI.
+#### <span style="background-color:#2874A6;padding:3px;border;border-radius: 3px;">**Additions using TDD**</span> 
+- Made a new class called CalcModel which switches between the two states infix and postfix.
+### <span style="background-color:#196F3D;padding:3px;border;border-radius: 3px;">**Added**</span>
+- Updated the controller so that it also becomes an observer for the radio buttons which are being pressed, so that it can respectivily change its state.<br />
+i.e if infix button is clicked the observer will see this and change the state of the CalcModel.
+- GUIView was also updated to notfiy the observer when a radio button has been pressed.
+#### <span style="background-color:#6C3483;padding:3px;border;border-radius: 3px;">**Merge**</span> 
+- Merge **feature-STANDARD_CALC** back to main.
+
+<br />
+
 ## **Release-2.0 , 01-12-2022 to 02-12-2022**
 ### <span style="background-color:#196F3D;padding:3px;border;border-radius: 3px;">**Feature Added**</span>
 - Create a new feature branch called **feature-STANDARD_CALC** to evaluate infix expressions in the backend, by converting the infix expression to postfix.
 #### <span style="background-color:#2874A6;padding:3px;border;border-radius: 3px;">**Additions using TDD**</span> 
 - Made a new class called StandardCalc which evaluates infix expressions using the evaluate method, it also checks for operator precedence.
 #### <span style="background-color:#6C3483;padding:3px;border;border-radius: 3px;">**Merge**</span> 
-- Merge feature-STANDARD_CALC back to main.
+- Merge **feature-STANDARD_CALC** back to main.
 
 <br />
 
@@ -19,7 +33,7 @@
     2. **push** method, to add Entry which represents Symbols into the stack.
     3. **pop** method which pops latest Symbol from stack, and throws exception if stack is empty.
 #### <span style="background-color:#6C3483;padding:3px;border;border-radius: 3px;">**Merge**</span> 
-- Merge feature-OP_STACK back to main.
+- Merge **feature-OP_STACK** back to main.
 
 <br />
 

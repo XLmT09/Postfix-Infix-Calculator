@@ -1,7 +1,8 @@
 package calculator.controller;
 
+import calculator.CalcModel;
 import calculator.InvalidExpressionException;
-import calculator.RevPolishCalc;
+import calculator.OpType;
 import calculator.ViewInterface;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -18,12 +19,12 @@ public class CalcController {
   //I use decimal format to get rid of scientific notation
   DecimalFormat df = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
   // Only RevPolishPolish model made so just hard code this model for now
-  private RevPolishCalc model = new RevPolishCalc();
+  private CalcModel model = new CalcModel();
   // The view the controller will listen to
   private ViewInterface view;
 
   public CalcController() {}
-
+  
   // Performs evaluation for a given expression, where evaluation depends on the model type
   private void calculate() {
     try {
@@ -43,5 +44,16 @@ public class CalcController {
   public void addView(ViewInterface v) {
     view = v;
     v.addCalcObserver(this::calculate);
+    v.addTypeObserver(this::changeType);
+  }
+  
+  /**
+   * Change state of calculator and then display the state change to user.
+   *
+   * @param type The type to be changed to
+   */
+  public void changeType(OpType type) {
+    model.setState(type);
+    view.setAnswer("Changed to " + type);
   }
 }

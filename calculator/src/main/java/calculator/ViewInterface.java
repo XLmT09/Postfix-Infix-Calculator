@@ -1,5 +1,7 @@
 package calculator;
 
+import java.util.function.Consumer;
+
 /**
  * How we want to interact with our calculator. Just defines the data and provides hooks for
  * notification and insertion of observers.
@@ -28,4 +30,11 @@ public interface ViewInterface {
    * @param observer The observer of the view
    */
   public void addCalcObserver(Observer observer);
+
+  /**
+   * Add an observer of the calculate mode change action.
+   *
+   * @param observer the observer
+   */
+  void addTypeObserver(Consumer<OpType> observer);
 }
