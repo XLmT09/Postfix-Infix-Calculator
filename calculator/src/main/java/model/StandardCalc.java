@@ -1,4 +1,8 @@
-package calculator;
+package model;
+
+import enums.Symbol;
+import exceptions.InvalidExpressionException;
+import stack.OpStack;
 
 /**
  * This class evaluates infix {@code String} expressions.
@@ -10,7 +14,7 @@ public class StandardCalc implements Calculator {
   private RevPolishCalc rpCalc;
 
   /**
-   * Initialises an empty {@link calculator.OpStack OpStack} and creates a
+   * Initialises an empty {@link stack.OpStack OpStack} and creates a
    * {@link calculator.RevPolishClac RevPolishCalc} object.
    */
   public StandardCalc() {

@@ -1,6 +1,6 @@
 package calculator;
 
-import calculator.controller.CalcController;
+import controller.CalcController;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

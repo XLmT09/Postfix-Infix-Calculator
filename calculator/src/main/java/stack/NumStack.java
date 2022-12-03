@@ -1,8 +1,10 @@
-package calculator;
+package stack;
+
+import calculator.Entry;
 
 /**
  * This class represents a 
- * {@link calculator.Stack Stack} of numeric values. 
+ * {@link stack.Stack Stack} of numeric values. 
  *
  * @author HIJI
  */
@@ -11,7 +13,7 @@ public class NumStack {
   
   /**
    * Constructs a new {@code NumStack} object and
-   * initialises an empty {@link calculator.Stack Stack}. 
+   * initialises an empty {@link stack.Stack Stack}. 
    */
   public NumStack() {
     stack = new Stack();
@@ -48,7 +50,7 @@ public class NumStack {
   }
   
   /**
-   * Clear the {@link calculator.Stack Stack}.
+   * Clear the {@link stack.Stack Stack}.
    */
   public void clear() {
     stack.clear();

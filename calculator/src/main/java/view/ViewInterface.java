@@ -1,5 +1,7 @@
-package calculator;
+package view;
 
+import calculator.Observer;
+import enums.OpType;
 import java.util.function.Consumer;
 
 /**

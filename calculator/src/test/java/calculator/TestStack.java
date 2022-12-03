@@ -3,10 +3,12 @@ package calculator;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import enums.Symbol;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import stack.Stack;
 
 class TestStack {
   private Stack stack;
