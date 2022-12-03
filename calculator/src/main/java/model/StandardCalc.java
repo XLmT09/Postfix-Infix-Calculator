@@ -76,6 +76,8 @@ public class StandardCalc implements Calculator {
     boolean prevNumber = false;
     // Forming postfix expression
     String postfix = "";
+    // result after evaluation
+    String res;
     
     
     // loop through elements of an expression
@@ -113,6 +115,11 @@ public class StandardCalc implements Calculator {
     }
 
     //postfix string has been created, so now just needs to be evaluated.
-    return rpCalc.evaluate(postfix);
+    try {
+      return rpCalc.evaluate(postfix);
+    } catch (InvalidExpressionException e) {
+      throw new InvalidExpressionException("Invalid infix expression");
+    }
+
   }
 }
