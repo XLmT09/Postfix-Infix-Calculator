@@ -1,6 +1,18 @@
 # **Release Notes**
 ### 📅03/12/2022
 ### 🪲Bug Fix
+- Remove bug where incorrect error message was being displayed.
+An example in inifx mode:
+An example🔎:
+<pre>
+    Before: 10 + + 10 Outputs: Inavlid postfix expression
+    After: 10 + + 10 Outputs: Inavlid infix expression
+</pre>
+
+<br />
+
+### 📅03/12/2022
+### 🪲Bug Fix
 - Remove bug where postfix expressions were being evaluated in infix mode.
 
 <br />
