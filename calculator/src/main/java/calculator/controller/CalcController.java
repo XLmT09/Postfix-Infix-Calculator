@@ -53,6 +53,7 @@ public class CalcController {
    * @param type The type to be changed to
    */
   public void changeType(OpType type) {
+    model.setState(type);
     view.setAnswer("Changed to " + type);
   }
 }

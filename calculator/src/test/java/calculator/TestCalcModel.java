@@ -17,14 +17,14 @@ class TestCalcModel {
   //Change state to infix then perform evaluation
   @Test
   void testStandardEvaluate() {
-    calc.setState(true);
+    calc.setState(OpType.INFIX);
     assertEquals(6.0f, calc.evaluate("3 + 3"));
   }
   
   //Change state to postfix then perform evaluation
   @Test
   void testPostfixEvaluate() {
-    calc.setState(false);
+    calc.setState(OpType.POSTFIX);
     assertEquals(6.0f, calc.evaluate("3 3 +"));
   }
 
