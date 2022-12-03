@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -68,15 +69,18 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <RadioButton mnemonicParsing="false" style="-fx-cursor: hand;" text="Polish">
+            <RadioButton fx:id="polishButton" mnemonicParsing="false" selected="true" style="-fx-cursor: hand;" text="Polish">
                <font>
                   <Font name="Calibri Bold Italic" size="18.0" />
                </font>
                <HBox.margin>
                   <Insets left="50.0" top="18.0" />
                </HBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="calcType" />
+               </toggleGroup>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" style="-fx-cursor: hand;" text="Infix">
+            <RadioButton fx:id="infixButton" mnemonicParsing="false" style="-fx-cursor: hand;" text="Infix" toggleGroup="$calcType">
                <font>
                   <Font name="Calibri Bold Italic" size="18.0" />
                </font>
