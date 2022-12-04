@@ -17,6 +17,10 @@ public class AsciiView implements ViewInterface {
    */
   private String question;
   /**
+   * Hold {@code String} here to check if its valid.
+   */
+  private String tempQuestion;
+  /**
    * The observer of the Calculate action.
    */
   Observer calc = null;
@@ -59,8 +63,13 @@ public class AsciiView implements ViewInterface {
           }
           break;
         case '?':
-          question = s.nextLine();
-          System.out.println("Question set to: " + question);
+          tempQuestion = s.nextLine();
+          if (tempQuestion.trim().length() < 1) {
+            System.out.println("Expression could not be set!");
+          } else {
+            question = tempQuestion;
+            System.out.println("Question set to: " + question);
+          }
           break;
         case 'Q':
         case 'q':
@@ -72,6 +81,7 @@ public class AsciiView implements ViewInterface {
       }
     }
     s.close();
+
   }
 
   /**
@@ -79,10 +89,12 @@ public class AsciiView implements ViewInterface {
    */
   private void help() {
     System.out.println("Use one of the following:");
-    System.out.println("Expression - to set expression");
+    System.out.println(
+        "To set expression type ? 'expression' (MUST HAVE SPACE BETWEEN SPACEBAR AND EXPRESSION)");
+    System.out.println("? - to set expression");
     System.out.println("P - to change to postfix");
     System.out.println("I - to change to infix");
-    System.out.println("C - to calculate");
+    System.out.println("C - to calculate expression");
     System.out.println("Q - to exit");
   }
 
