@@ -29,6 +29,7 @@ class TestRevPolishCalc {
   void testBasicAddition() {
     assertEquals(2.0f, calc.evaluate("1 1 +"));
     assertEquals(3.0f, calc.evaluate("1 2 +"));
+    assertEquals(2.0f, calc.evaluate(" 1 1 +"));
   }
   
   @Test
