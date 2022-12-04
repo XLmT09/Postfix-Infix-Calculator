@@ -1,4 +1,32 @@
 # **Changelog**
+## **Release-2.4 , 04-12-2022**
+### <span style="background-color:#B03A2E;padding:3px;border;border-radius: 3px;">**Bug Fix**</span>
+- Error message was not being fully displayed on screen because there is not enough room on the calculator app, so the size of thw whole application is increased to provide space for the message.
+
+<br />
+
+## **Release-2.3 , 04-12-2022**
+### <span style="background-color:#196F3D;padding:3px;border;border-radius: 3px;">**Added**</span>
+- To imporve user experience i add an instruction on how to create
+expressions for the calculator, where there must be a space between
+every number and symbol. If i did not include this here the user may
+have been confused about why there expression was wrong when they dont
+include spaces.
+
+<br />
+
+## **Release-2.2 , 03-12-2022**
+### <span style="background-color:#B03A2E;padding:3px;border;border-radius: 3px;">**Bug Fix**</span>
+- Fix a bug incorrect postfix error messages were being displayed in infix mode, to fix this i just change the message in the throw statement for the error.
+
+<br />
+
+## **Release-2.1 , 03-12-2022**
+### <span style="background-color:#B03A2E;padding:3px;border;border-radius: 3px;">**Bug Fix**</span>
+- Fix a bug where postfix expressions were working in infix mode, to fix this the programe checks if two numbers have been entered in a row. If two numbers have been entered with spcae next to each other then the programme will throw an error.
+
+<br />
+
 ## **Release-2.0 , 03-12-2022**
 ### <span style="background-color:#196F3D;padding:3px;border;border-radius: 3px;">**Feature Added**</span>
 - Create a new feature branch called **feature-CONNECT_INFIX_TO_GUI**, the goal is to get both postfix and infix calculations working on the GUI.
