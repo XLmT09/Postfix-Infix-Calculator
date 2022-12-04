@@ -1,6 +1,13 @@
 # **Release Notes**
 ## **Release-2.3**
 ### 📅04/12/2022
+### 🪲Bug Fix
+- Fixed bug where some error messages were not being displayed fully, to fix this i shifted all componets upwards.
+
+<br />
+
+## **Release-2.3**
+### 📅04/12/2022
 ### 🌟New
 - Add instructions on how to use the calculator on top of the application.
 - Instruction just says to use spaces between operators and symbols.
