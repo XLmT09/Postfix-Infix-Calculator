@@ -1,15 +1,25 @@
 package calculator;
 
 import controller.CalcController;
+import view.AsciiView;
 
 /**
- * The programme starts of by executing the main. 
+ * The programme starts of by executing the main.
  *
  * @author HIJI
  */
-public class Driver  {
+public class Driver {
 
+  /**
+   * Java programs start by executing main.
+   *
+   * @param args The command line arguments
+   */
   public static void main(String[] args) {
-    Launcher.startJavaFx(new CalcController(), args);
+    if (System.console() != null) {
+      Launcher.startAscii(new CalcController(), args);
+    } else {
+      Launcher.startJavaFx(new CalcController(), args);
+    }
   }
 }
