@@ -119,6 +119,6 @@ public class AsciiView implements ViewInterface {
    * @param a the evaluated answer.
    */
   public void setAnswer(String a) {
-    System.out.println("Answer is just around the corner");
+    System.out.println("Result: " + a);
   }
 }
