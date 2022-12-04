@@ -9,7 +9,7 @@ import java.util.function.Consumer;
  * This class specifies what a View must be able to do. In particular it allows us to dynamically
  * set observers for view events.
  *
- * @author Dave
+ * @author Dave, HIJI
  */
 public class AsciiView implements ViewInterface {
   /**
@@ -47,12 +47,14 @@ public class AsciiView implements ViewInterface {
         case 'I':
         case 'i':
           if (changeType != null) {
+            System.out.println("Type changed to infix.");
             changeType.accept(OpType.INFIX);
           }
           break;
         case 'P':
         case 'p':
           if (changeType != null) {
+            System.out.println("Type changed to postfix.");
             changeType.accept(OpType.POSTFIX);
           }
           break;
@@ -77,11 +79,11 @@ public class AsciiView implements ViewInterface {
    */
   private void help() {
     System.out.println("Use one of the following:");
-    System.out.println("  ?Expression - to set expression");
-    System.out.println("  P - to change to postfix");
-    System.out.println("  I - to change to infix");
-    System.out.println("  C - to calculate");
-    System.out.println("  Q - to exit");
+    System.out.println("Expression - to set expression");
+    System.out.println("P - to change to postfix");
+    System.out.println("I - to change to infix");
+    System.out.println("C - to calculate");
+    System.out.println("Q - to exit");
   }
 
   /**
