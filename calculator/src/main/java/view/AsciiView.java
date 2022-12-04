@@ -59,7 +59,7 @@ public class AsciiView implements ViewInterface {
           }
           break;
         case '?':
-          question = t.substring(1);
+          question = s.nextLine();
           System.out.println("Question set to: " + question);
           break;
         case 'Q':
