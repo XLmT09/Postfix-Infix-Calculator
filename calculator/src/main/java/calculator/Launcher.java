@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 public class Launcher extends Application {
   //Width and height of the application
   private final int width = 450;
-  private final int height = 200;
+  private final int height = 250;
   /**
    * Used to pass information into main since JavaFX requires a specified signature for main the
    * method.
