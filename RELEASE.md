@@ -1,4 +1,13 @@
 # **Release Notes**
+## **Release-2.3**
+### 📅04/12/2022
+### 🌟New
+- Add instructions on how to use the calculator on top of the application.
+- Instruction just says to use spaces between operators and symbols.
+
+<br />
+
+## **Release-2.2**
 ### 📅03/12/2022
 ### 🪲Bug Fix
 - Remove bug where incorrect error message was being displayed.
@@ -11,6 +20,7 @@ An example🔎:
 
 <br />
 
+## **Release-2.1**
 ### 📅03/12/2022
 ### 🪲Bug Fix
 - Remove bug where postfix expressions were being evaluated in infix mode.
