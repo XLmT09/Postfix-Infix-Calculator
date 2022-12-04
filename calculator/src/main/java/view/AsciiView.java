@@ -66,6 +66,10 @@ public class AsciiView implements ViewInterface {
         case 'G':
           System.out.println("Your current expression: " + question);
           break;
+        case 'h':
+        case 'H':
+          help();
+          break;
         case '?':
           tempQuestion = s.nextLine();
           if (tempQuestion.trim().length() < 1) {
@@ -81,7 +85,7 @@ public class AsciiView implements ViewInterface {
           finished = true;
           break;
         default:
-          help();
+          System.out.println("Invalid command, type 'h' or 'H' to open instructionss");
       }
     }
     s.close();
@@ -92,6 +96,12 @@ public class AsciiView implements ViewInterface {
    * A help text string.
    */
   private void help() {
+    System.out.println("CALCULATOR APPLICATION");
+    System.out.println("==================================================================");
+    System.out.println("==================================================================");
+    System.out.println();
+    System.out.println("NUMBERS AND SYMBOLS MUST HAVE SPACE BETWEEN THEM IN EXPRESSIONS");
+    System.out.println();
     System.out.println("Use one of the following:");
     System.out.println(
         "To set expression type ? 'expression' (MUST HAVE SPACE BETWEEN ? AND EXPRESSION)");
