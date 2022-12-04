@@ -76,9 +76,6 @@ public class StandardCalc implements Calculator {
     boolean prevNumber = false;
     // Forming postfix expression
     String postfix = "";
-    // result after evaluation
-    String res;
-    
     
     // loop through elements of an expression
     for (String part : expressionParts) {
