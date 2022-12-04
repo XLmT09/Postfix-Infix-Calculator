@@ -62,6 +62,10 @@ public class AsciiView implements ViewInterface {
             changeType.accept(OpType.POSTFIX);
           }
           break;
+        case 'g':
+        case 'G':
+          System.out.println("Your current expression: " + question);
+          break;
         case '?':
           tempQuestion = s.nextLine();
           if (tempQuestion.trim().length() < 1) {
@@ -90,8 +94,9 @@ public class AsciiView implements ViewInterface {
   private void help() {
     System.out.println("Use one of the following:");
     System.out.println(
-        "To set expression type ? 'expression' (MUST HAVE SPACE BETWEEN SPACEBAR AND EXPRESSION)");
+        "To set expression type ? 'expression' (MUST HAVE SPACE BETWEEN ? AND EXPRESSION)");
     System.out.println("? - to set expression");
+    System.out.println("G - to get current expression");
     System.out.println("P - to change to postfix");
     System.out.println("I - to change to infix");
     System.out.println("C - to calculate expression");
