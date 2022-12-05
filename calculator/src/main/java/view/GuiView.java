@@ -1,8 +1,8 @@
 package view;
 
-import calculator.Observer;
 import enums.OpType;
 import java.util.function.Consumer;
+import controller.Observer;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;

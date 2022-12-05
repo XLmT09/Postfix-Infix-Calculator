@@ -1,6 +1,6 @@
 package stack;
 
-import calculator.FactoryEntry;
+import entry.FactoryEntry;
 
 /**
  * This class represents a 

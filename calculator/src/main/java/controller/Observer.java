@@ -1,4 +1,4 @@
-package calculator;
+package controller;
 
 /**
  * This defines a new functional type that we can then name as more meaningful for an observer

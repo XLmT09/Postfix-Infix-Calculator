@@ -1,5 +1,6 @@
-package calculator;
+package entry;
 
+import enums.EntryInterface;
 import enums.Symbol;
 import enums.Type;
 import exceptions.BadTypeException;
@@ -10,8 +11,8 @@ import java.util.Objects;
  *
  * @author HIJI
  */
-public class NumEntry implements EntryInterface {
-  private float number;
+public class SymbolEntry implements EntryInterface {
+  private Symbol sym;
   private Type type;
 
   /**
@@ -19,9 +20,9 @@ public class NumEntry implements EntryInterface {
    *
    * @param val The symbol the {@code Entry} class will hold
    */
-  public NumEntry(float val) {
-    number = val;
-    type = Type.NUMBER;
+  public SymbolEntry(Symbol val) {
+    sym = val;
+    type = Type.SYMBOL;
   }
 
   /**
@@ -33,25 +34,23 @@ public class NumEntry implements EntryInterface {
 
   /**
    * Returns the {@code Symbol} value an {@code Entry} represents.
-   *
-   * @throws BadTypeException If {@code Entry} not of {@code Type SYMBOL}
    */
   public Symbol getSymbol() {
-    throw new BadTypeException("Entry must be Type: SYMBOL");
+    return sym;
   }
 
   /**
    * Returns the float value an {@code Entry} represents.
    *
-   * @return number The float value an {@code Entry} holds
+   * @throws BadTypeException If {@code Entry} not of {@code Type NUMBER}
    */
   public float getValue() {
-    return number;
+    throw new BadTypeException("Entry must be Type: NUMBER");
   }
-
+  
   @Override
   public int hashCode() {
-    return Objects.hash(number, type);
+    return Objects.hash(sym, type);
   }
 
   /**
@@ -69,11 +68,11 @@ public class NumEntry implements EntryInterface {
       return false;
     }
     EntryInterface otherEntry = (EntryInterface) obj;
-    return type.equals(otherEntry.getType()) && number == otherEntry.getValue();
+    return type.equals(otherEntry.getType()) && sym == otherEntry.getSymbol();
   }
   
   @Override
   public String toString() {
-    return "" + number;
+    return "" + sym;
   }
 }
