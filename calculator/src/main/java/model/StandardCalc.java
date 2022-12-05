@@ -82,7 +82,7 @@ public class StandardCalc implements Calculator {
       // check if string element is a number
       if (part.matches(regex)) {
         if (prevNumber) {
-          throw new InvalidExpressionException("Not a infix expression");
+          throw new InvalidExpressionException("Invalid infix expression");
         }
         postfix += part + " ";
         prevNumber = true;

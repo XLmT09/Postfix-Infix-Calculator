@@ -2,14 +2,15 @@ package calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import entry.NumEntry;
+import entry.SymbolEntry;
 import enums.EntryInterface;
 import enums.Symbol;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import entry.NumEntry;
-import entry.SymbolEntry;
 import stack.Stack;
 
 class TestStack {

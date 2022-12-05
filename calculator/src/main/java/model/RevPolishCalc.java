@@ -72,7 +72,7 @@ public class RevPolishCalc implements Calculator {
           // EmptyStackException is called if there isn't enough numbers in stack to
           // perform the operation
         } catch (EmptyStackException e) {
-          throw new InvalidExpressionException("Invalid expression for reverse polish");
+          throw new InvalidExpressionException("Invalid postfix expression");
         }
       }
     }
@@ -80,7 +80,7 @@ public class RevPolishCalc implements Calculator {
     result = stackValues.pop();
     // If stack is not empty then the expression was not valid
     if (!stackValues.isEmpty()) {
-      throw new InvalidExpressionException("Invalid expression for reverse polish");
+      throw new InvalidExpressionException("Invalid postfix expression");
     }
     // last value in the stack contains the result
 
