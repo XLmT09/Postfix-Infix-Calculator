@@ -1,5 +1,7 @@
 package enums;
 
+import java.math.BigDecimal;
+
 /**
  * This interface contains getters which all Entry must implement.
  *
@@ -17,8 +19,8 @@ public interface EntryInterface {
   public Symbol getSymbol();
 
   /**
-   * Returns the float value an {@code Entry} represents.
+   * Returns the decimal value an {@code Entry} represents.
    */
-  public float getValue();
+  public BigDecimal getValue();
 
 }

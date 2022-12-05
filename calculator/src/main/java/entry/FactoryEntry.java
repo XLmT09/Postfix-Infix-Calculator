@@ -1,5 +1,6 @@
 package entry;
 
+import java.math.BigDecimal;
 import enums.Symbol;
 
 /**
@@ -19,7 +20,7 @@ public class FactoryEntry {
    *
    * @param val The number the {@code Entry} class will hold
    */
-  public NumEntry createEntry(float val) {
+  public NumEntry createEntry(BigDecimal val) {
     return new NumEntry(val);
   }
   

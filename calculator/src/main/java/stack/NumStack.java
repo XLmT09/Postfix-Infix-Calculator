@@ -1,6 +1,7 @@
 package stack;
 
 import entry.FactoryEntry;
+import java.math.BigDecimal;
 
 /**
  * This class represents a 
@@ -22,23 +23,23 @@ public class NumStack {
   }
   
   /**
-   * Converts the passed float number to an  
+   * Converts the passed BigDecimal number to an  
    * {@link calculator.Entry Entry} object and added to the {@code NumStack}.
    *
    * @param num The value to be converted to an {@link calculator.Entry Entry} object.
    */
-  public void push(float num) {
+  public void push(BigDecimal num) {
     stack.push(fact.createEntry(num));
   }
   
   /**
    * Retrieves and removes the latest {@link calculator.Entry Entry} in the 
-   * {@code NumStack} and returns its corresponding float value.
+   * {@code NumStack} and returns its corresponding BigDecimal value.
    *
-   * @return poppedValue The newest {@link calculator.Entry Entry} object's float value
+   * @return poppedValue The newest {@link calculator.Entry Entry} object's BigDecimal value
    */
-  public float pop() {
-    float poppedValue = stack.pop().getValue();
+  public BigDecimal pop() {
+    BigDecimal poppedValue = stack.pop().getValue();
     return poppedValue;
   }
   
