@@ -1,6 +1,8 @@
 package model;
 
 import exceptions.InvalidExpressionException;
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.EmptyStackException;
 import stack.NumStack;
 
@@ -21,16 +23,16 @@ public class RevPolishCalc implements Calculator {
   }
 
   // This method calculates and returns the operations on two numbers
-  private float doOperation(String operation, float val1, float val2) {
+  private BigDecimal doOperation(String operation, BigDecimal val1, BigDecimal val2) {
     switch (operation) {
       case "+":
-        return val1 + val2;
+        return val2.add(val1);
       case "-":
-        return val2 - val1;
+        return val2.subtract(val1);
       case "*":
-        return val2 * val1;
+        return val2.multiply(val1);
       case "/":
-        return val2 / val1;
+        return val2.divide(val1, MathContext.DECIMAL32);
       // If operators above are not recognised then its invalid
       default:
         throw new InvalidExpressionException("Expression contains an invalid operator");
@@ -47,13 +49,13 @@ public class RevPolishCalc implements Calculator {
    *         invalid operator. This means operator must be: +, -, * or /.
    */
   @Override
-  public float evaluate(String expression) {
+  public BigDecimal evaluate(String expression) {
     // Split and store components of expression in an array
     String[] expressionParts = expression.trim().split(" ");
     // This regular expression checks if a string is an integer or decimal
     String regex = "[-]*[0-9]+[\\.]?[0-9]*";
     // result of the evaluation stored here
-    float result;
+    BigDecimal result;
 
     // Clear stack whenever method gets called, so previous values are not in use
     stackValues.clear();
@@ -62,12 +64,12 @@ public class RevPolishCalc implements Calculator {
     for (String part : expressionParts) {
       // check if string element is a number
       if (part.matches(regex)) {
-        stackValues.push(Float.parseFloat(part));
+        stackValues.push(new BigDecimal(part));
       } else {
         try {
           // If operator is detected then should always pop the first two numbers
-          float num1 = stackValues.pop();
-          float num2 = stackValues.pop();
+          BigDecimal num1 = stackValues.pop();
+          BigDecimal num2 = stackValues.pop();
           stackValues.push(doOperation(part, num1, num2));
           // EmptyStackException is called if there isn't enough numbers in stack to
           // perform the operation

@@ -4,6 +4,7 @@ import enums.EntryInterface;
 import enums.Symbol;
 import enums.Type;
 import exceptions.BadTypeException;
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -12,7 +13,7 @@ import java.util.Objects;
  * @author HIJI
  */
 public class NumEntry implements EntryInterface {
-  private float number;
+  private BigDecimal number;
   private Type type;
 
   /**
@@ -20,7 +21,7 @@ public class NumEntry implements EntryInterface {
    *
    * @param val The symbol the {@code Entry} class will hold
    */
-  public NumEntry(float val) {
+  public NumEntry(BigDecimal val) {
     number = val;
     type = Type.NUMBER;
   }
@@ -42,11 +43,11 @@ public class NumEntry implements EntryInterface {
   }
 
   /**
-   * Returns the float value an {@code Entry} represents.
+   * Returns the decimal value an {@code Entry} represents.
    *
-   * @return number The float value an {@code Entry} holds
+   * @return number The decimal value an {@code Entry} holds
    */
-  public float getValue() {
+  public BigDecimal getValue() {
     return number;
   }
 
@@ -70,7 +71,7 @@ public class NumEntry implements EntryInterface {
       return false;
     }
     EntryInterface otherEntry = (EntryInterface) obj;
-    return type.equals(otherEntry.getType()) && number == otherEntry.getValue();
+    return type.equals(otherEntry.getType()) && number.equals(otherEntry.getValue());
   }
   
   @Override

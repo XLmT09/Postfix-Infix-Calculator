@@ -4,6 +4,7 @@ import enums.EntryInterface;
 import enums.Symbol;
 import enums.Type;
 import exceptions.BadTypeException;
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -40,11 +41,11 @@ public class SymbolEntry implements EntryInterface {
   }
 
   /**
-   * Returns the float value an {@code Entry} represents.
+   * Returns the deciaml value an {@code Entry} represents.
    *
    * @throws BadTypeException If {@code Entry} not of {@code Type NUMBER}
    */
-  public float getValue() {
+  public BigDecimal getValue() {
     throw new BadTypeException("Entry must be Type: NUMBER");
   }
   
