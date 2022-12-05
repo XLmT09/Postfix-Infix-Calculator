@@ -1,9 +1,9 @@
 package view;
 
-import calculator.Observer;
 import enums.OpType;
 import java.util.Scanner;
 import java.util.function.Consumer;
+import controller.Observer;
 
 /**
  * This class specifies what a View must be able to do. In particular it allows us to dynamically
