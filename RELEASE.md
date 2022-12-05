@@ -1,4 +1,14 @@
 # **Release Notes**
+## **Release-3.1**
+### 📅05/12/2022
+### 🌟New
+- I update text to use the term 'postfix' instead of 'polish'.
+- Simplified error messages, keeping them short and not too long.
+### 🪲Bug Fix
+- Fix bug where in ASCII Mode when switching between postfix or infix, output was repeating twice.
+
+<br />
+
 ## **Release-3.0**
 ### 📅05/12/2022
 ### 🌟New
