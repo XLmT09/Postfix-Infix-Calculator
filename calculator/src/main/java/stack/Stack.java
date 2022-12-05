@@ -1,6 +1,6 @@
 package stack;
 
-import calculator.Entry;
+import calculator.EntryInterface;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Stack {
   private Integer size = 0;
-  private List<Entry> entries;
+  private List<EntryInterface> entries;
 
   /**
    * Constructs a empty {@code Stack}.
@@ -33,7 +33,7 @@ public class Stack {
    *
    * @param newEntry The newest {@code Entry} to be added
    */
-  public void push(Entry newEntry) {
+  public void push(EntryInterface newEntry) {
     entries.add(newEntry);
     size++;
   }
@@ -44,7 +44,7 @@ public class Stack {
    * @return newEntry The newest {@code Entry} from the {@code Stack}
    * @throws EmptyStackException If {@code Stack} size is zero
    */
-  public Entry pop() {
+  public EntryInterface pop() {
     if (size == 0) {
       throw new EmptyStackException();
     }
@@ -58,7 +58,7 @@ public class Stack {
    * @return newEntry The newest {@code Entry} from the {@code Stack}
    * @throws EmptyStackException If {@code Stack} size is zero
    */
-  public Entry top() {
+  public EntryInterface top() {
     if (size == 0) {
       throw new EmptyStackException();
     }
