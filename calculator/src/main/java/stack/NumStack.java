@@ -1,6 +1,6 @@
 package stack;
 
-import calculator.Entry;
+import calculator.FactoryEntry;
 
 /**
  * This class represents a 
@@ -10,6 +10,7 @@ import calculator.Entry;
  */
 public class NumStack {
   private Stack stack;
+  private FactoryEntry fact;
   
   /**
    * Constructs a new {@code NumStack} object and
@@ -17,6 +18,7 @@ public class NumStack {
    */
   public NumStack() {
     stack = new Stack();
+    fact = new FactoryEntry();
   }
   
   /**
@@ -26,8 +28,7 @@ public class NumStack {
    * @param num The value to be converted to an {@link calculator.Entry Entry} object.
    */
   public void push(float num) {
-    Entry newEntry = new Entry(num);
-    stack.push(newEntry);
+    stack.push(fact.createEntry(num));
   }
   
   /**
