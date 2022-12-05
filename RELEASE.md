@@ -1,5 +1,26 @@
 # **Release Notes**
-## **Release-2.3**
+## **Release-3.0**
+### 📅05/12/2022
+### 🌟New
+- ASCII mode has been created for the application.
+- To open application in ASCII mode open up terminal and type 'java -jar' followed by the name of the jar file for the application:
+<br>
+Example🔎:
+<pre>
+java -jar application_name
+</pre>
+- ASCII mode has the following commands:
+    1. P - To switch to postfix mode
+    2. I - To switch to infix mode
+    3. ? - To enter an expression
+    4. G - To get previous valid expression
+    5. C - To evalaute a expression
+    6. H - To open up help menu
+    7. Q - To quit the application
+
+<br />
+
+## **Release-2.4**
 ### 📅04/12/2022
 ### 🪲Bug Fix
 - Fixed bug where some error messages were not being displayed fully, to fix this i shifted all componets upwards.
