@@ -1,6 +1,6 @@
 package stack;
 
-import calculator.Entry;
+import calculator.FactoryEntry;
 import enums.Symbol;
 
 /**
@@ -12,6 +12,7 @@ import enums.Symbol;
  */
 public class OpStack {
   private Stack stack;
+  private FactoryEntry fact;
 
   /**
    * Constructs a new {@code OpStack} object and initialises an empty {@link stack.Stack
@@ -19,6 +20,7 @@ public class OpStack {
    */
   public OpStack() {
     stack = new Stack();
+    fact = new FactoryEntry();
   }
 
   /**
@@ -36,7 +38,7 @@ public class OpStack {
    * @param sym The value to be converted to an {@link calculator.Entry Entry} object.
    */
   public void push(Symbol sym) {
-    stack.push(new Entry(sym));
+    stack.push(fact.createEntry(sym));
   }
 
   /**
