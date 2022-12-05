@@ -51,14 +51,12 @@ public class AsciiView implements ViewInterface {
         case 'I':
         case 'i':
           if (changeType != null) {
-            System.out.println("Type changed to infix.");
             changeType.accept(OpType.INFIX);
           }
           break;
         case 'P':
         case 'p':
           if (changeType != null) {
-            System.out.println("Type changed to postfix.");
             changeType.accept(OpType.POSTFIX);
           }
           break;
