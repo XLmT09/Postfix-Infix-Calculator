@@ -1,8 +1,8 @@
 package view;
 
+import controller.Observer;
 import enums.OpType;
 import java.util.function.Consumer;
-import controller.Observer;
 
 /**
  * How we want to interact with our calculator. Just defines the data and provides hooks for

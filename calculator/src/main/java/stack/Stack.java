@@ -1,9 +1,9 @@
 package stack;
 
+import enums.EntryInterface;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.List;
-import enums.EntryInterface;
 
 /**
  * This class represents a Stack of Entry values.

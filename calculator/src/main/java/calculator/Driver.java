@@ -1,7 +1,6 @@
 package calculator;
 
 import controller.CalcController;
-import view.AsciiView;
 
 /**
  * The programme starts of by executing the main.
