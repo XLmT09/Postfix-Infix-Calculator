@@ -12,16 +12,16 @@ import stack.Stack;
 
 class TestStack {
   private Stack stack;
-  private Entry numEntry;
-  private Entry symbolEntry;
+  private EntryInterface numEntry;
+  private EntryInterface symbolEntry;
   private int currentSize;
-  private ArrayList<Entry> testArray;
+  private ArrayList<NumEntry> testArray;
 
   @BeforeEach
   void setUp() {
     stack = new Stack();
-    numEntry = new Entry(5.0f);
-    symbolEntry = new Entry(Symbol.MINUS);
+    numEntry = new NumEntry(5.0f);
+    symbolEntry = new SymbolEntry(Symbol.MINUS);
     currentSize = 0;
     testArray = new ArrayList<>();
   }
@@ -48,7 +48,7 @@ class TestStack {
   @Test
   void testLotsPush() {
     for (float entryVal = -100.4f; entryVal < 500; entryVal++) {
-      stack.push(new Entry(entryVal));
+      stack.push(new NumEntry(entryVal));
       assertEquals(stack.size(), (int) ++currentSize, "After pushing size should increase by one.");
     }
   }
@@ -110,9 +110,9 @@ class TestStack {
   @Test
   void testPushLotsThenLoopPopAndTop() {
     for (float entryVal = -50f; entryVal < 500; entryVal++) {
-      stack.push(new Entry(entryVal));
+      stack.push(new NumEntry(entryVal));
       //array will help identify later if stack top and pop returns the correct values.
-      testArray.add(new Entry(entryVal));
+      testArray.add(new NumEntry(entryVal));
       assertEquals(stack.size(), ++currentSize, "After pushing size should increase by one.");
     }
 
