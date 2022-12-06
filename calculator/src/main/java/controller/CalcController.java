@@ -43,6 +43,8 @@ public class CalcController {
    */
   public void addView(ViewInterface v) {
     view = v;
+    // set initial type to postfix
+    model.setState(OpType.POSTFIX);
     v.addCalcObserver(this::calculate);
     v.addTypeObserver(this::changeType);
   }
