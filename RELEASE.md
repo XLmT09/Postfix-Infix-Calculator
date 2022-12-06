@@ -1,9 +1,33 @@
 # **Release Notes**
+## **Release-3.4**
+### 📅06/12/2022
+### 🪲Bug Fix
+- Fix bug where there was an output overflow, so when number gets too large digits overlap with components of the application.
+- Fix bug where there was an error in postfix expressions if user enters expression which as more than one consecutive whitespace.
+Example🔎:
+<pre>
+Expression: 10    10    *
+Before Output: Gives error
+After Outoput: 100
+</pre>
+
+<br />
+
 ## **Release-3.3**
 ### 📅06/12/2022
 ### 🪲Bug Fix
 - Fix bug where if in ASCII view and not set a explict type in beggining it will throw an error.
 - Now by default ASCII view is set type postfix by default.
+
+<br />
+
+## **Release-3.3**
+### 📅06/12/2022
+### 🪲Bug Fix
+- Fix bug where if in ASCII view and not set a explict type in beggining it will throw an error.
+- Now by default ASCII view is set type postfix by default.
+
+<br />
 
 ## **Release-3.2**
 ### 📅06/12/2022
