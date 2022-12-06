@@ -51,7 +51,7 @@ public class RevPolishCalc implements Calculator {
   @Override
   public BigDecimal evaluate(String expression) {
     // Split and store components of expression in an array
-    String[] expressionParts = expression.trim().split(" ");
+    String[] expressionParts = expression.trim().split("\\s+");
     // This regular expression checks if a string is an integer or decimal
     String regex = "[-]*[0-9]+[\\.]?[0-9]*";
     // result of the evaluation stored here
