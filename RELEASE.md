@@ -1,5 +1,11 @@
 # **Release Notes**
-## **Release-3.1**
+## **Release-3.3**
+### 📅06/12/2022
+### 🪲Bug Fix
+- Fix bug where if in ASCII view and not set a explict type in beggining it will throw an error.
+- Now by default ASCII view is set type postfix by default.
+
+## **Release-3.2**
 ### 📅06/12/2022
 ### 🪲Bug Fix
 - Fix bug where prescion was lost with numbers too large or small
