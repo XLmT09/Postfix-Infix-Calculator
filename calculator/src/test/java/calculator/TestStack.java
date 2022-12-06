@@ -7,6 +7,7 @@ import entry.NumEntry;
 import entry.SymbolEntry;
 import enums.EntryInterface;
 import enums.Symbol;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import org.junit.jupiter.api.BeforeEach;
@@ -23,7 +24,7 @@ class TestStack {
   @BeforeEach
   void setUp() {
     stack = new Stack();
-    numEntry = new NumEntry(5.0f);
+    numEntry = new NumEntry(BigDecimal.valueOf(5.0));
     symbolEntry = new SymbolEntry(Symbol.MINUS);
     currentSize = 0;
     testArray = new ArrayList<>();
@@ -51,7 +52,7 @@ class TestStack {
   @Test
   void testLotsPush() {
     for (float entryVal = -100.4f; entryVal < 500; entryVal++) {
-      stack.push(new NumEntry(entryVal));
+      stack.push(new NumEntry(BigDecimal.valueOf(entryVal)));
       assertEquals(stack.size(), (int) ++currentSize, "After pushing size should increase by one.");
     }
   }
@@ -113,9 +114,9 @@ class TestStack {
   @Test
   void testPushLotsThenLoopPopAndTop() {
     for (float entryVal = -50f; entryVal < 500; entryVal++) {
-      stack.push(new NumEntry(entryVal));
+      stack.push(new NumEntry(BigDecimal.valueOf(entryVal)));
       //array will help identify later if stack top and pop returns the correct values.
-      testArray.add(new NumEntry(entryVal));
+      testArray.add(new NumEntry(BigDecimal.valueOf(entryVal)));
       assertEquals(stack.size(), ++currentSize, "After pushing size should increase by one.");
     }
 

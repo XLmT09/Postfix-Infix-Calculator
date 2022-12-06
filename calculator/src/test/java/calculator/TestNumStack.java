@@ -3,6 +3,7 @@ package calculator;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.math.BigDecimal;
 import java.util.EmptyStackException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,16 +25,16 @@ class TestNumStack {
   
   @Test
   void testNumStackPush() {
-    numStack.push((float) 5.0);
+    numStack.push(BigDecimal.valueOf(5));
     assertEquals(numStack.isEmpty(), false,
         "Adding Entry to stack wont make it empty.");
   }
   
   @Test
   void testNumStackPop() {
-    numStack.push((float) 3.0);
-    assertEquals(numStack.pop(), 3.0,
-        "Pushed a float of value 3.0, so when popped i should get 3.0");
+    numStack.push(BigDecimal.valueOf(3.0));
+    assertEquals(numStack.pop(), BigDecimal.valueOf(3.0),
+        "Pushed a BigDecimal of value 3.0, so when popped i should get 3.0");
     assertEquals(numStack.isEmpty(), true, 
         "After stack has been popped it should be empty.");
   }
@@ -46,15 +47,15 @@ class TestNumStack {
   
   @Test
   void testNumStackPushAndPopTwice() {
-    numStack.push((float) 3.0);
-    numStack.push((float) 4.0);
+    numStack.push(BigDecimal.valueOf(3.0));
+    numStack.push(BigDecimal.valueOf(4.0));
     assertEquals(numStack.isEmpty(), false,
         "Adding Entry to stack wont make it empty.");
-    assertEquals(numStack.pop(), 4.0,
-        "Pushed a float of value 4.0 last, so when popped i should get 4.0");
+    assertEquals(numStack.pop(), BigDecimal.valueOf(4.0),
+        "Pushed a BigDecimal of value 4.0 last, so when popped i should get 4.0");
     assertEquals(numStack.isEmpty(), false,
         "Still one Entry in stack so not empty.");
-    assertEquals(numStack.pop(), 3.0,
+    assertEquals(numStack.pop(), BigDecimal.valueOf(3.0),
         "Last Entry is 3.0, so when popped i should get 3.0");
     assertEquals(numStack.isEmpty(), true, 
         "After stack has been popped it should be empty.");
