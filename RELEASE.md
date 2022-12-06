@@ -1,5 +1,18 @@
 # **Release Notes**
 ## **Release-3.1**
+### 📅06/12/2022
+### 🪲Bug Fix
+- Fix bug where prescion was lost with numbers too large or small
+Example🔎:
+<pre>
+Expression: 100000000 100000 *
+Output Expression Before: 9999999827968
+Output Expression After: 10000000000000
+</pre>
+
+<br />
+
+## **Release-3.1**
 ### 📅05/12/2022
 ### 🌟New
 - I update text to use the term 'postfix' instead of 'polish'.
