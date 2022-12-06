@@ -8,6 +8,7 @@ import enums.EntryInterface;
 import enums.Symbol;
 import enums.Type;
 import exceptions.BadTypeException;
+import java.math.BigDecimal;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +20,7 @@ class TestEntry {
   @BeforeEach
   void setup() {
     fact = new FactoryEntry();
-    numEntry = fact.createEntry(2.0f);
+    numEntry = fact.createEntry(new BigDecimal(2));
     symbolEntry = fact.createEntry(Symbol.LEFT_BRACKET);
   }
   
@@ -68,7 +69,7 @@ class TestEntry {
 
   @Test
   void testGetValue() {
-    assertEquals(2.0, numEntry.getValue(), 
+    assertEquals(BigDecimal.valueOf(2), numEntry.getValue(), 
         "getValue method should give same number passed in constructor.");
   }
   
@@ -80,8 +81,8 @@ class TestEntry {
   
   @Test 
   void tesEntriesOfDifferentTypesArePrintable() {
-    assertEquals("2.0", numEntry.toString(), 
-        "toString returns float in string format for Entry type NUMBER.");
+    assertEquals("2", numEntry.toString(), 
+        "toString returns BigDecimal in string format for Entry type NUMBER.");
     assertEquals("(", symbolEntry.toString(), 
         "toString retruns corrosponding enum code for Entry type SYMBOL.");
   }
@@ -91,7 +92,7 @@ class TestEntry {
   void testEntriesAreEqual() {
     assertEquals(numEntry.equals(numEntry), true, 
         "Check if Entry is equal to itself.");
-    assertEquals(numEntry.equals(fact.createEntry(2.0f)), true, 
+    assertEquals(numEntry.equals(fact.createEntry(new BigDecimal(2))), true, 
         "If Entry is NUMBER type and has the same number value then returns true.");
     assertEquals(symbolEntry.equals(fact.createEntry(Symbol.LEFT_BRACKET)), true, 
         "If Entry has same SYMBOL type and the same Symbol enum then return true.");
@@ -99,8 +100,8 @@ class TestEntry {
 
   @Test 
   void testEntriesAreNotEqual() {
-    assertEquals(numEntry.equals(fact.createEntry(6.0f)), false,
-        "return false as Entry float values are different values.");
+    assertEquals(numEntry.equals(fact.createEntry(new BigDecimal(6))), false,
+        "return false as Entry BigDecimal values are different values.");
     assertEquals(symbolEntry.equals(fact.createEntry(Symbol.RIGHT_BRACKET)), false,
         "return false as symbols are different enums.");
     assertEquals(numEntry.equals(symbolEntry), false, 
@@ -111,7 +112,7 @@ class TestEntry {
   void testEntryHashCode() {
     assertEquals(numEntry.hashCode() == numEntry.hashCode(), true, 
             "return true as they are the same insatnce.");
-    assertEquals(numEntry.hashCode() == fact.createEntry(2.0f).hashCode(), true, 
+    assertEquals(numEntry.hashCode() == fact.createEntry(new BigDecimal(2)).hashCode(), true, 
             "return true as they are same class of same values.");
   }
   
