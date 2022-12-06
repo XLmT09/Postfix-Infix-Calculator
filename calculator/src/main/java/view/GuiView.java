@@ -74,7 +74,7 @@ public class GuiView implements ViewInterface {
    */
   @FXML
   //fx:id="answer"
-  private Text answer; // Value injected by FXMLLoader
+  private TextField answer; // Value injected by FXMLLoader
 
   /**
    * The field which allows users to input expression in the application.
