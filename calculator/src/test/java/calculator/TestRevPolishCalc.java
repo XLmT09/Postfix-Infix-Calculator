@@ -29,9 +29,9 @@ class TestRevPolishCalc {
 
   @Test
   void testBasicAddition() {
-    assertEquals(BigDecimal.valueOf(2), calc.evaluate("1 1 +"));
-    assertEquals(BigDecimal.valueOf(3), calc.evaluate("1 2 +"));
-    assertEquals(BigDecimal.valueOf(2), calc.evaluate(" 1 1 +"));
+    assertEquals("2", calc.evaluate("1 1 +"));
+    assertEquals("3", calc.evaluate("1 2 +"));
+    assertEquals("2", calc.evaluate(" 1 1 +"));
   }
 
   @Test
@@ -56,14 +56,14 @@ class TestRevPolishCalc {
       testExpression += intRandom + " + ";
     }
 
-    assertEquals(sum, calc.evaluate(testExpression),
+    assertEquals(sum.toPlainString(), calc.evaluate(testExpression),
         "Evaluate should return the same value as sum,"
             + " because sum had kept track of the additions.");
   }
 
   @Test
   void testBasicSubtraction() {
-    assertEquals(BigDecimal.valueOf(-1), calc.evaluate("1 2 -"),
+    assertEquals("-1", calc.evaluate("1 2 -"),
         "It should pop the first value and be subtracted by the second popped value.");
   }
 
@@ -90,14 +90,14 @@ class TestRevPolishCalc {
       testExpression += intRandom + " - ";
     }
 
-    assertEquals(sum, calc.evaluate(testExpression),
+    assertEquals(sum.toPlainString(), calc.evaluate(testExpression),
         "Evaluate should return the same value as sum,"
             + " because sum had kept track of the subtractions.");
   }
 
   @Test
   void testBasicMultiplication() {
-    assertEquals(BigDecimal.valueOf(12), calc.evaluate("6 2 *"),
+    assertEquals("12", calc.evaluate("6 2 *"),
         "It should pop the first value and be multiplied by the second popped value.");
   }
 
@@ -126,14 +126,14 @@ class TestRevPolishCalc {
       testExpression += intRandom + " * ";
     }
 
-    assertEquals(sum, calc.evaluate(testExpression),
+    assertEquals(sum.toPlainString(), calc.evaluate(testExpression),
         "Evaluate should return the same value as sum,"
             + " because sum had kept track of the multplication.");
   }
 
   @Test
   void testBasicDivision() {
-    assertEquals(BigDecimal.valueOf(2), calc.evaluate("6 3 /"),
+    assertEquals("2", calc.evaluate("6 3 /"),
         "It should pop the first value and be divided by the second popped value.");
   }
 
@@ -162,25 +162,25 @@ class TestRevPolishCalc {
       testExpression += intRandom + " / ";
     }
 
-    assertEquals(sum, calc.evaluate(testExpression),
+    assertEquals(sum.toPlainString(), calc.evaluate(testExpression),
         "Evaluate should return the same value as sum,"
             + " because sum had kept track of the Division.");
   }
 
   @Test
   void testOperationOnNegativeNumbers() {
-    assertEquals(BigDecimal.valueOf(-5), calc.evaluate("-5 1 /"));
-    assertEquals(BigDecimal.valueOf(-10), calc.evaluate("-20 10 +"));
+    assertEquals("-5", calc.evaluate("-5 1 /"));
+    assertEquals("-10", calc.evaluate("-20 10 +"));
   }
 
   @Test
   void testTwoDifferentOperations() {
-    assertEquals(BigDecimal.valueOf(-14), calc.evaluate("-5 1 + 10 -"));
+    assertEquals("-14", calc.evaluate("-5 1 + 10 -"));
   }
 
   @Test
   void testTwoOperationsInRow() {
-    assertEquals(BigDecimal.valueOf(-16), calc.evaluate("-5 1 10 + -"));
+    assertEquals("-16", calc.evaluate("-5 1 10 + -"));
   }
 
   @Test
@@ -207,7 +207,7 @@ class TestRevPolishCalc {
   void testInvalidExpressionThenCorrectExpressiom() {
     assertThrows(InvalidExpressionException.class, () -> calc.evaluate("10 10"),
         "This is an invalid expression as there are two numbers and no operators");
-    assertEquals(BigDecimal.valueOf(10), calc.evaluate("5 5 +"));
+    assertEquals("10", calc.evaluate("5 5 +"));
   }
 
 }

@@ -2,9 +2,6 @@ package controller;
 
 import enums.OpType;
 import exceptions.InvalidExpressionException;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.Locale;
 import model.CalcModel;
 import view.ViewInterface;
 
@@ -16,20 +13,19 @@ import view.ViewInterface;
  * @author HIJI, Dave
  */
 public class CalcController {
-  //I use decimal format to get rid of scientific notation
-  DecimalFormat df = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
   // Only RevPolishPolish model made so just hard code this model for now
-  private CalcModel model = new CalcModel();
+  private CalcModel model;
   // The view the controller will listen to
   private ViewInterface view;
 
-  public CalcController() {}
+  public CalcController() {
+    model = new CalcModel();
+  }
   
   // Performs evaluation for a given expression, where evaluation depends on the model type
   private void calculate() {
     try {
-      df.setMaximumFractionDigits(340);
-      view.setAnswer("" + df.format(model.evaluate(view.getExpression())));
+      view.setAnswer("" + model.evaluate(view.getExpression()));
     } catch (InvalidExpressionException e) {
       // custom error messages have been written, so we just call the getMessage method
       view.setAnswer(e.getMessage());

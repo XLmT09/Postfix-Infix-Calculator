@@ -1,7 +1,6 @@
 package model;
 
 import enums.OpType;
-import java.math.BigDecimal;
 
 /**
  * A state class which switches between postfix and infix.
@@ -42,7 +41,7 @@ public class CalcModel {
   /**
    * Evaluates user expression either in infix or postfix.
    */
-  public BigDecimal evaluate(String expression) {
+  public String evaluate(String expression) {
     return currentState.evaluate(expression);
   }
 }
