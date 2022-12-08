@@ -2,6 +2,7 @@ package calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import entry.EntryInterface;
 import entry.NumEntry;
 import entry.SymbolEntry;

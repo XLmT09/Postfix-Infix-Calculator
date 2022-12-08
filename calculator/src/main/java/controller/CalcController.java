@@ -41,6 +41,7 @@ public class CalcController {
     view = v;
     // set initial type to postfix
     model.setState(OpType.POSTFIX);
+    //uses tell method from observer class to notify controller
     v.addCalcObserver(this::calculate);
     v.addTypeObserver(this::changeType);
   }

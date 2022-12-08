@@ -12,7 +12,7 @@ import enums.Symbol;
  */
 public class OpStack {
   private Stack stack;
-  private FactoryEntry fact;
+  private static FactoryEntry fact;
 
   /**
    * Constructs a new {@code OpStack} object and initialises an empty {@link stack.Stack

@@ -28,9 +28,8 @@ public class Launcher extends Application {
    * The entry point to begin the JavaFX framework.
    *
    * @param c the controller that needs to be notified once the View is created
-   * @param args the arguments to actual main method in the Driver
    */
-  public static void startAscii(CalcController c, String[] args) {
+  public static void startAscii(CalcController c) {
     AsciiView v = new AsciiView();
     myController = c;
     myController.addView(v);
