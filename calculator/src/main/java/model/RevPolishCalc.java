@@ -3,7 +3,10 @@ package model;
 import exceptions.InvalidExpressionException;
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.EmptyStackException;
+import java.util.Locale;
 import stack.NumStack;
 
 /**
@@ -14,12 +17,17 @@ import stack.NumStack;
 public class RevPolishCalc implements Calculator {
   // The NumStack will hold the numeric values of an given expression.
   private NumStack stackValues;
+  // I use decimal format to get rid of scientific notation
+  private DecimalFormat df;
 
   /**
    * Initialises an empty {@link stack.NumStack NumStack}.
    */
   public RevPolishCalc() {
     stackValues = new NumStack();
+    df = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+    //Max number of digits allowed in the fraction portion of the number
+    df.setMaximumFractionDigits(340);
   }
 
   // This method calculates and returns the operations on two numbers
@@ -44,18 +52,16 @@ public class RevPolishCalc implements Calculator {
    *
    * @param expression The {@code String} to be evaluated
    * @return The solution for the expression
-   * @throws InvalidExpressionException If there are not enough numbers in
-   *         {@link stack.NumStack NumStack} during calculation, or if expression contains an
-   *         invalid operator. This means operator must be: +, -, * or /.
+   * @throws InvalidExpressionException If there are not enough numbers in {@link stack.NumStack
+   *         NumStack} during calculation, or if expression contains an invalid operator. This means
+   *         operator must be: +, -, * or /.
    */
   @Override
-  public BigDecimal evaluate(String expression) {
+  public String evaluate(String expression) {
     // Split and store components of expression in an array
     String[] expressionParts = expression.trim().split("\\s+");
     // This regular expression checks if a string is an integer or decimal
     String regex = "[-]*[0-9]+[\\.]?[0-9]*";
-    // result of the evaluation stored here
-    BigDecimal result;
 
     // Clear stack whenever method gets called, so previous values are not in use
     stackValues.clear();
@@ -79,13 +85,13 @@ public class RevPolishCalc implements Calculator {
       }
     }
 
-    result = stackValues.pop();
+    BigDecimal result = stackValues.pop();
     // If stack is not empty then the expression was not valid
     if (!stackValues.isEmpty()) {
       throw new InvalidExpressionException("Invalid postfix expression");
     }
     // last value in the stack contains the result
 
-    return result;
+    return df.format(result);
   }
 }

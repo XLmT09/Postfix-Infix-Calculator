@@ -2,7 +2,6 @@ package model;
 
 import enums.Symbol;
 import exceptions.InvalidExpressionException;
-import java.math.BigDecimal;
 import stack.OpStack;
 
 /**
@@ -68,7 +67,7 @@ public class StandardCalc implements Calculator {
    * @return The solution for the expression
    */
   @Override
-  public BigDecimal evaluate(String expression) {
+  public String evaluate(String expression) {
     // Split and store components of expression in an array
     String[] expressionParts = expression.split(" ");
     // This regular expression checks if a string is an integer or decimal
