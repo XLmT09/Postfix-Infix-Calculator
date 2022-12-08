@@ -1,6 +1,8 @@
-package enums;
+package entry;
 
 import java.math.BigDecimal;
+import enums.Symbol;
+import enums.Type;
 
 /**
  * This interface contains getters which all Entry must implement.

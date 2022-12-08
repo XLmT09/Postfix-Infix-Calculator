@@ -23,11 +23,13 @@ public class AsciiView implements ViewInterface {
   /**
    * The observer of the Calculate action.
    */
-  Observer calc = null;
+  Observer calc;
   /**
    * The observer of the "change type of calculation" event.
    */
-  Consumer<OpType> changeType = null;
+  Consumer<OpType> changeType;
+  
+  public AsciiView() {}
 
   /**
    * This is the main method of the class that keeps prompting for questions and notifies the

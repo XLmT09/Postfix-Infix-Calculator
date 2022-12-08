@@ -1,6 +1,5 @@
 package entry;
 
-import enums.EntryInterface;
 import enums.Symbol;
 import enums.Type;
 import exceptions.BadTypeException;
