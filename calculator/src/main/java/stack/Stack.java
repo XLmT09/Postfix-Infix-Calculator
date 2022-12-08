@@ -1,9 +1,9 @@
 package stack;
 
+import entry.EntryInterface;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.List;
-import entry.EntryInterface;
 
 /**
  * This class represents a Stack of Entry values.

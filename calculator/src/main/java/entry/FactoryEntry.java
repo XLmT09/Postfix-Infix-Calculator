@@ -1,7 +1,7 @@
 package entry;
 
-import java.math.BigDecimal;
 import enums.Symbol;
+import java.math.BigDecimal;
 
 /**
  * A factory class which creates different Entry types.

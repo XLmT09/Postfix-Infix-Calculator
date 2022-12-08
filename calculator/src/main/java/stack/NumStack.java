@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  */
 public class NumStack {
   private Stack stack;
-  private FactoryEntry fact;
+  private static FactoryEntry fact;
   
   /**
    * Constructs a new {@code NumStack} object and
