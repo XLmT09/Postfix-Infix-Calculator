@@ -13,7 +13,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.text.Text;
 
 /**
  * This is the JavaFX View that is filled by the FXML loader at runtime.
@@ -22,6 +21,8 @@ import javafx.scene.text.Text;
  */
 public class GuiView implements ViewInterface {
 
+  public GuiView() {}
+  
   /**
    * This allows a new observer to be added to the change calculate strategy action.
    *

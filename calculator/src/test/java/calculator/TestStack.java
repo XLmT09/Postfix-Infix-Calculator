@@ -2,10 +2,9 @@ package calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
+import entry.EntryInterface;
 import entry.NumEntry;
 import entry.SymbolEntry;
-import enums.EntryInterface;
 import enums.Symbol;
 import java.math.BigDecimal;
 import java.util.ArrayList;

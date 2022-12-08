@@ -52,6 +52,6 @@ public class CalcController {
    */
   public void changeType(OpType type) {
     model.setState(type);
-    view.setAnswer("Changed to " + type);
+    view.setAnswer("Changed to " + type); 
   }
 }
