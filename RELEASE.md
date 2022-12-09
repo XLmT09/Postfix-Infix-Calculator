@@ -1,4 +1,12 @@
 # **Release Notes**
+## **Release-3.5**
+### 📅09/12/2022
+### 🌟New
+-  Making improvements to code so that the application runs faster.
+### 🪲Bug Fix
+- Fix division by zero bug, where error message is not being displayed.
+- Fix infix mode bug where it wasnt displaying an error message after detecting an invalid operator.
+
 ## **Release-3.4**
 ### 📅06/12/2022
 ### 🪲Bug Fix
