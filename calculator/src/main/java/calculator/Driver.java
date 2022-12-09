@@ -16,7 +16,7 @@ public class Driver {
    */
   public static void main(String[] args) {
     if (System.console() != null) {
-      Launcher.startAscii(new CalcController(), args);
+      Launcher.startAscii(new CalcController());
     } else {
       Launcher.startJavaFx(new CalcController(), args);
     }
