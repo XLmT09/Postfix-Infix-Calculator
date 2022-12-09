@@ -83,4 +83,10 @@ class TestStandardClac {
     assertThrows(InvalidExpressionException.class, () -> calc.evaluate("3 3 +"), 
         "RevPolish should not be valid in infix expressions.");
   }
+  
+  @Test
+  void testInvalidOperator() {
+    assertThrows(InvalidExpressionException.class, () -> calc.evaluate("3 3 &"), 
+        "+/ is not a valid operator so should throw an error.");
+  }
 }

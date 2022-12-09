@@ -1,7 +1,6 @@
 package controller;
 
 import enums.OpType;
-import exceptions.InvalidExpressionException;
 import model.CalcModel;
 import view.ViewInterface;
 
