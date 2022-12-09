@@ -26,7 +26,7 @@ public class CalcController {
   private void calculate() {
     try {
       view.setAnswer("" + model.evaluate(view.getExpression()));
-    } catch (InvalidExpressionException e) {
+    } catch (Exception e) {
       // custom error messages have been written, so we just call the getMessage method
       view.setAnswer(e.getMessage());
     }

@@ -81,6 +81,8 @@ public class RevPolishCalc implements Calculator {
           // perform the operation
         } catch (EmptyStackException e) {
           throw new InvalidExpressionException("Invalid postfix expression");
+        } catch (ArithmeticException e) {
+          throw new ArithmeticException(e.getMessage());
         }
       }
     }
