@@ -56,7 +56,7 @@ public class StandardCalc implements Calculator {
         opStack.push(Symbol.LEFT_BRACKET);
         break;
       default:
-        return;
+        throw new InvalidExpressionException("Expression contains an invalid operator");
     }
   }
 
