@@ -1,4 +1,58 @@
 # **Changelog**
+## **Release-3.5 , 09-12-2022**
+#### <span style="background-color:#515A5A;padding:3px;border;border-radius: 3px;">**Refactoring**</span> 
+- Refactor CalcController to not do any number formatting with the final result, i move the formatting operation into the RevPolishCalc as thats the class which is actually meant to be doing the formatting.
+- Moved EntryInterface to entry package.
+- Make constructors for views to pass complience testing.
+### <span style="background-color:#B03A2E;padding:3px;border;border-radius: 3px;">**Bug Fix**</span>
+- Fixed divison by zero error by cathcing that the error, previously it wasnt being cathced.
+- Fix problem where inifx mode couldnt detect an invalid symbol.
+
+<br />
+
+## **Release-3.4 , 06-12-2022**
+### <span style="background-color:#B03A2E;padding:3px;border;border-radius: 3px;">**Bug Fix**</span>
+- There was a bug where when numbers get too large the digits overlap on components of the calculator. To fix this i make component holding the answer into a text feild and not a text box.
+
+<br />
+
+## **Release-3.3 , 06-12-2022**
+### <span style="background-color:#B03A2E;padding:3px;border;border-radius: 3px;">**Bug Fix**</span>
+- There was a bug where ASCII view would not work unless it was first given a type. To fix this i set the default type to POSTFIX.
+
+<br />
+
+## **Release-3.2 , 06-12-2022**
+### <span style="background-color:#B03A2E;padding:3px;border;border-radius: 3px;">**Bug Fix**</span>
+- There was bug where presion was being lost on calculations when numbers were too large or small.
+- To fix this i change the number datatype from float to BigDecimal.
+
+<br />
+
+## **Release-3.1 , 05-12-2022**
+#### <span style="background-color:#515A5A;padding:3px;border;border-radius: 3px;">**Refactoring**</span> 
+- Created a factory design pattern for the entry class, to decrease coupling of classes. It prevents the stack classes from constructing the objects, the stack class insstead just provides a method.
+- Make code modular by grouping classes into packages.
+### <span style="background-color:#B03A2E;padding:3px;border;border-radius: 3px;">**Bug Fix**</span>
+- There is a bug fix where when chaning modes in ASCII it outputs "chnaged to ... mode" twice, to fix this i delete the duplicate System.println line.
+
+<br />
+
+## **Release-3.0 , 04-12-2022**
+### <span style="background-color:#196F3D;padding:3px;border;border-radius: 3px;">**Feature Added**</span>
+- Create a new feature branch called **feature-ASCII_VIEW**, the goal is to implement a terminal based calculator for the user.
+### <span style="background-color:#196F3D;padding:3px;border;border-radius: 3px;">**Added**</span>
+- Make ASCII View avaialbe to work from the launcher class.
+- Make the driver switch between ASCII and GUI depending on where the programme is being launched.
+- ASCII View can work with polish and infix mode.
+- Add option where user can get previous expression they enterd.
+### <span style="background-color:#B03A2E;padding:3px;border;border-radius: 3px;">**Bug Fix**</span>
+- Postfix mode was not working in ASCII View this is because when a user has an empty space in front of there expression it keeps throwing an error. To solve this i trim the empty space at the beggining of the expression before evaluating.
+#### <span style="background-color:#6C3483;padding:3px;border;border-radius: 3px;">**Merge**</span> 
+- Merge **feature-ASCII_VIEW** back to main.
+
+<br />
+
 ## **Release-2.4 , 04-12-2022**
 ### <span style="background-color:#B03A2E;padding:3px;border;border-radius: 3px;">**Bug Fix**</span>
 - Error message was not being fully displayed on screen because there is not enough room on the calculator app, so the size of thw whole application is increased to provide space for the message.
